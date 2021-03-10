@@ -95,7 +95,7 @@ class Player(Containing, Thing):
     def _send(self, msg):
         ws = getattr(self, "websocket", None)
         if ws:
-            IOLoop.current().add_callback(ws.write_message, msg)
+            mud.game.IOLOOP.add_callback(ws.write_message, msg)
             if msg["type"] != "death":
                 self.transcript.append(msg)
 

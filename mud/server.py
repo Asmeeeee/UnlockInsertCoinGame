@@ -56,4 +56,6 @@ def main():
         autoreload    = False,
     )
     app.listen(options.port)
-    tornado.ioloop.IOLoop.instance().start()
+    import mud.game
+    mud.game.IOLOOP = tornado.ioloop.IOLoop.current()
+    mud.game.IOLOOP.start()
