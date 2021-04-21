@@ -21,6 +21,8 @@ events:
 ---
 id: grenier-000
 type: Location
+contains:
+  - lampe-000
 events:
   info:
     actor: "Grenier"
