@@ -43,6 +43,16 @@ events:
     actor: |
       Vous êtes dans au bout de la salle.
       Grâce à votre lampe accroché a votre casque, vous arrivez a apercevoir une piece au sol.
+    
+---
+id: borne-000
+type: Location
+events:
+  info:
+    actor: "La borne démarre! Les meilleurs scores apparaissent à l'écran."
+  look:
+    actor: |
+      Les meilleurs scores. Devant vos yeux se trouve une énigme.
 
 
 # ============= OBJETS =============
@@ -101,6 +111,7 @@ events:
   look:
     actor: |
       Une pièce.
+  
 
 # ============= PORTAILS =============
 ---
