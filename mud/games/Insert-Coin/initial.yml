@@ -29,15 +29,13 @@ events:
   look:
     actor: |
       Vous êtes dans le grenier de la maison. Au fond a droite, vous apercevez la borne d'arcade. A gauche, un coin sombre vous intrigue. Accroché sur le mur, vous trouvez le vieux casque à lampe frontale de votre tonton Stéphane.
-
-
 ---
-id: coin_sombre-000
+id: coin-000
 type: Location
-contains: 
-  - piece-000
 props:
   - dark
+contains:
+  - piece-000
 events:
   info:
     actor: "Un coin sombre."
@@ -92,6 +90,8 @@ events:
 ---
 id: piece-000
 type: Thing
+props:
+  - takable
 name: 
     - piece 
     - pièce
@@ -144,10 +144,10 @@ exits:
     direction: ouest
     events:
       enter-portal:
-        actor   : "Vous entrez dans la salle sombre."
+        actor   : "Vous vous dirigez vers le recoin sombre"
   - id: coin-000-est
     location: coin-000
     direction: est
     events:
       enter-portal:
-        actor   : "Vous revenez dans le grenier"
+        actor   : "Vous revenez au centre du grenier"
