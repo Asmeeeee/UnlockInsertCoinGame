@@ -14,7 +14,7 @@ id: intro-000
 type: Location
 events:
   info:
-    actor: "Un long dimanche d'automne. Votre téléphone est à court de batterie. Plus qu'une solution pour tuer l'ennui: direction le grenier de la maison ou sommeille la vieille borne d'arcade poussiereuse de votre grand-pere !"
+    actor: "Un long dimanche d'automne. Votre téléphone est à court de batterie. Plus qu'une solution pour tuer l'ennui: direction le grenier de la maison ou sommeille la vieille borne d'arcade poussiereuse de votre grand-pere ! "
   look:
     actor: |
       Rien a voir de plus ici
