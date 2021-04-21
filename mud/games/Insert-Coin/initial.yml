@@ -28,7 +28,24 @@ events:
     actor: "Grenier"
   look:
     actor: |
-      Vous êtes dans le grenier de la maison. Au fond a droite, vous apercevez la borne d'arcade. A gauche, le grenier. Accroché sur le mur, vous trouvez le vieux casque à lampe frontale de votre tonton Stéphane.
+      Vous êtes dans le grenier de la maison. Au fond a droite, vous apercevez la borne d'arcade. A gauche, un coin sombre vous intrigue. Accroché sur le mur, vous trouvez le vieux casque à lampe frontale de votre tonton Stéphane.
+
+
+---
+id: coin_sombre-000
+type: Location
+contains: 
+  - piece-000
+props:
+  - dark
+events:
+  info:
+    actor: "Un coin sombre."
+  look:
+    actor: |
+      Vous êtes dans au bout de la salle.
+      Grâce à votre lampe accroché a votre casque, vous arrivez a apercevoir une piece au sol.
+
 
 # ============= OBJETS =============
 ---
@@ -72,6 +89,18 @@ events:
         - type  : ChangePropEffect
           modifs: -object:light-on
 
+---
+id: piece-000
+type: Thing
+name: 
+    - piece 
+    - pièce
+events:
+  info:
+    actor: "Une pièce"
+  look:
+    actor: |
+      Une pièce.
 
 # ============= PORTAILS =============
 ---
