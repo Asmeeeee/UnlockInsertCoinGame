@@ -135,3 +135,19 @@ exits:
     events:
       enter-portal:
         actor   : "PAS SENSE MARCHER"
+---
+id: portal-grenier-coin-000
+type: Portal
+exits:
+  - id: grenier-000-ouest
+    location: grenier-000
+    direction: ouest
+    events:
+      enter-portal:
+        actor   : "Vous entrez dans la salle sombre."
+  - id: coin-000-est
+    location: coin-000
+    direction: est
+    events:
+      enter-portal:
+        actor   : "Vous revenez dans le grenier"
