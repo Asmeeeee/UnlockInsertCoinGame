@@ -28,7 +28,7 @@ events:
     actor: "Grenier"
   look:
     actor: |
-      Vous êtes dans le grenier de la maison. Au fond a droite, vous apercevez la borne d'arcade. A gauche, le grenier.
+      Vous êtes dans le grenier de la maison. Au fond a droite, vous apercevez la borne d'arcade. A gauche, le grenier. Accroché sur le mur, vous trouvez le vieux casque à lampe frontale de votre tonton Stéphane.
 
 # ============= OBJETS =============
 ---
@@ -39,34 +39,35 @@ props:
   - takable
 names   :
   - lampe
-  - lampe-torche
+  - casque
+  - lampe-frontale
 gender: fem
 events:
   info:
     actor:
       - props: =lampe-000:light-on
-        data : "Une lampe-torche allumée."
-      - data : "Une lampe-torche éteinte."
+        data : "Un casque à lampe frontale. Elle est allumée."
+      - data : "Un casque à lampe frontale. Elle est éteinte."
   look:
     actor:
       - props: object:light-on
-        data : "Une lampe-torche allumée."
-      - data : "Une lampe-torche éteinte."
+        data : "Un casque à lampe frontale. Elle est allumée"
+      - data : "Un casque à lampe frontale. Elle est éteinte."
   light-on:
     - props : object:light-on
       actor : "La lampe est déjà allumée."
-    - actor : "Vous allumez votre lampe-torche."
+    - actor : "Vous allumez votre lampe frontale."
       observer: |
-        {{ actor.name }} allume sa lampe-torche.
+        {{ actor.name }} allume sa lampe frontale.
       effects:
         - type  : ChangePropEffect
           modifs: object:light-on
   light-off:
     - props : -object:light-on
       actor : "La lampe est déjà éteinte."
-    - actor : "Vous éteignez votre lampe-torche."
+    - actor : "Vous éteignez votre lampe frontale."
       observer: |
-        {{ actor.name }} éteind sa lampe-torche.
+        {{ actor.name }} éteind sa lampe frontale.
       effects:
         - type  : ChangePropEffect
           modifs: -object:light-on
