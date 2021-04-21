@@ -44,17 +44,31 @@ events:
       Vous êtes au bout du grenier, vous entendez la pluie qui frappe la toiture.
       Grace a votre lampe frontale vous apercevez une piece doree au sol.
 ---
-id: borne-000
+id: borne-verrouille-000
 type: Location
+contains:
+  - borne-verrouille-001
 events:
   info:
     actor: "Est du grenier"
   look:
     actor: |
-      Vous etes devant la borne d'arcade, celle-ci semble attendre quelque chose ...
+      Vous etes a l'est du grenier. C'est la partie la plus eclairee de ce dernier.'
+---
+id: borne-deverrouille-000
+type: Location
+contains:
+  - borne-deverrouille-001
+events:
+  info:
+    actor: "Est du grenier"
+  look:
+    actor: |
+      Vous etes a l'est du grenier. C'est la partie la plus eclairee de ce dernier.'
 
 
 # ============= OBJETS =============
+
 ---
 id: lampe-000
 type: Thing
@@ -75,8 +89,10 @@ events:
   look:
     actor:
       - props: object:light-on
-        data : "Le vieux casque a lampe frontale de votre tonton Stephane. La lampe est allumee"
-      - data : "Le vieux casque a lampe frontale de votre tonton Stephane. La lampe est eteinte"
+        data : "Le vieux casque a lampe frontale de votre tonton Stephane. La lampe est allumee
+              </p> <img src=\"https://cdn.discordapp.com/attachments/498184586736435202/834433662766415922/Image_LampeFrontale.JPG\"> <p>"
+      - data : "Le vieux casque a lampe frontale de votre tonton Stephane. La lampe est eteinte
+              </p> <img src=\"https://cdn.discordapp.com/attachments/498184586736435202/834433662766415922/Image_LampeFrontale.JPG\"> <p>"
   light-on:
     - props : object:light-on
       actor : "La lampe est déjà allumée."
@@ -106,6 +122,41 @@ events:
   look:
     actor: |
       Une piece.
+---
+id: borne-verrouille-001
+type: Thing
+name:
+    - borne
+    - arcade
+gender: fem
+events:
+  info:
+    actor: "Une borne d'arcade"
+  look:
+    actor: |
+      L'ecran est allumé, il affiche clairement <i>Appuyez sur PLAY pour commencer !</i>
+---
+id: borne-deverrouille-001
+type: Thing
+names:
+  - borne
+  - arcade
+gender: fem
+props:
+  - light-on
+events:
+  info:
+    actor: "Une borne d'arcade"
+  look:
+    actor: |
+      Vous constatez les performances impressionnantes des precedents joueurs, affiche sur l'ecran.
+  type:
+    - props: event:typed-5938
+      effects:
+        - type  : EnterPortalEffect
+          exit  : =portal-borne-jungle-000-exit-1
+    - actor: |
+        Ce n'est pas le bon code.
 
 # ============= PORTAILS =============
 
@@ -158,7 +209,7 @@ exits:
       enter-portal:
         actor   : "Vous revenez au centre du grenier"
 ---
-id: portal-grenier-borne-000
+id: portal-grenier-borne-verrouille-000
 type: Portal
 exits:
   - id: grenier-000-est
@@ -167,9 +218,65 @@ exits:
     events:
       enter-portal:
         actor   : "Vous vous dirigez vers la borne d'arcade"
-  - id: borne-000-ouest
-    location: borne-000
+  - id: borne-verrouille-000-ouest
+    location: borne-verrouille-000
     direction: ouest
     events:
       enter-portal:
         actor   : "Vous revenez au centre du grenier"
+---
+id: portal-borne-verrouille-borne-000
+type: Portal
+props:
+  - closed
+exits:
+  - id: borne-verrouille-000-play
+    location: borne-verrouille-000
+    direction: play
+    name:
+      - borne
+      - arcade
+    gender: fem
+    props:
+      - for-enter
+    events:
+      enter-portal:
+        actor     : "L'ecran est allumé, il affiche clairement <i>Appuyez sur PLAY pour commencer !</i>"
+        failed:
+          actor   : &porte001 |
+            Rien ne se passe ... La borne d'arcade semble attendre quelque chose d'autre avant.
+      leave-portal:
+        actor     : "Vous quittez le jeux, la borne ne s'eteint pas pour autant."
+      open        :
+        - props   : portal:closed
+          actor   : *porte001
+        - props   : -portal:closed
+          actor   : &porte003 "Vous avez deja mis une piece dans la borne !"
+      open-with   :
+        - props   :
+            - portal:closed
+            - object2:key-for-borne-verrouille-borne-000
+          effects :
+            type  : ChangePropEffect
+            modifs:
+              - -portal:closed
+          actor   : |
+            La machine semble toujours fonctionner ! Les meilleurs scores apparaissent a l'ecran.
+        - props   :
+            - portal:closed
+            - -object2:key-for-borne-verrouille-borne-000
+          actor   : |
+            Vous tentez vainement de mettre {{ object2.noun_the() }} dans la fente de la borne.
+        - props   :
+            - -portal:closed
+          actor   : *porte003
+  - id: borne-deverrouille-000-exit
+    location: borne-deverrouille-000
+    direction: exit
+    name: borne
+    gender: fem
+    props:
+      - for-leave
+    events:
+      enter-portal:
+        actor   : "Vous quittez la borne d'arcade"

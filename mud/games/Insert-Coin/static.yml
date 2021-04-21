@@ -30,6 +30,8 @@ directions:
     start     : start
     azertyqsd : sens_interdit
     suivant   : suivant
+    play      : play
+    exit      : exit
   noun_the:
     nord      : le nord
     est       : l'est

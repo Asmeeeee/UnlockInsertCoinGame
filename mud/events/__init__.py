@@ -9,7 +9,7 @@ from .inspect      import InspectEvent
 from .take         import TakeEvent
 from .light        import LightOnEvent, LightOffEvent
 from .changeprop   import ChangePropEvent
-from .open         import OpenEvent, OpenWithEvent
+from .open         import OpenEvent, OpenWithEvent, OpenWithEvent2
 from .close        import CloseEvent, CloseWithEvent
 from .type         import TypeEvent
 from .inventory    import InventoryEvent

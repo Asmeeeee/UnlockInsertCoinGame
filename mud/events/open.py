@@ -16,3 +16,9 @@ class OpenWithEvent(Event3):
 
     def perform(self):
         self.inform("open-with")
+
+class OpenWithEvent2(Event3):
+    NAME = "open-with"
+
+    def perform(self):
+        self.inform("open-with")
