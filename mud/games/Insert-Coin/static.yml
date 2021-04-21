@@ -29,6 +29,7 @@ directions:
     grimper   : haut
     start     : start
     azertyqsd : sens_interdit
+    suivant   : suivant
   noun_the:
     nord      : le nord
     est       : l'est

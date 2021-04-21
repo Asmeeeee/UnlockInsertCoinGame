@@ -23,10 +23,10 @@ id: grenier-000
 type: Location
 events:
   info:
-    actor: "Un grenier"
+    actor: "Grenier"
   look:
     actor: |
-      Vous voyez un coin sombre à l'est, et une borne d'arcade à l'ouest
+      Vous êtes dans le grenier de la maison. Au fond a droite, vous apercevez la borne d'arcade. A gauche, le grenier 
 
 # ============= OBJETS =============
 
@@ -45,6 +45,22 @@ exits:
         actor   : "INSERT COIN"
   - id: intro-000-sens_interdit
     location: intro-000
+    direction: sens_interdit
+    events:
+      enter-portal:
+        actor   : "PAS SENSE MARCHER"
+---
+id: portal-intro-grenier-000
+type: Portal
+exits:
+  - id: intro-000-suivant
+    location: intro-000
+    direction: suivant
+    events:
+      enter-portal:
+        actor   : "Vous arrivez dans le grenier de la maison"
+  - id: grenier-000-sens_interdit
+    location: grenier-000
     direction: sens_interdit
     events:
       enter-portal:
