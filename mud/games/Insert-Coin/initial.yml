@@ -86,7 +86,6 @@ events:
       effects:
         - type  : ChangePropEffect
           modifs: -object:light-on
-
 ---
 id: piece-000
 type: Thing
