@@ -26,7 +26,7 @@ events:
     actor: "Grenier"
   look:
     actor: |
-      Vous êtes dans le grenier de la maison. Au fond a droite, vous apercevez la borne d'arcade. A gauche, le grenier 
+      VVous êtes dans le grenier de la maison. Au fond a droite, vous apercevez la borne d'arcade. A gauche, le grenier 
   parts:
   - lampe-000
   - jus_de_myrtille-000
