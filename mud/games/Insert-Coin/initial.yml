@@ -14,7 +14,7 @@ id: intro-000
 type: Location
 events:
   info:
-    actor: "Un long dimanche d'automne. Votre téléphone est à court de batterie. Plus qu'une solution pour tuer l'ennui: direction le grenier de la maison ou sommeille la vieille borne d'arcade poussiereuse de votre grand-pere ! "
+    actor: "Un long dimanche d'automne. Votre telephone est a court de batterie. Plus qu'une solution pour tuer l'ennui: direction le grenier de la maison ou sommeille la vieille borne d'arcade poussiereuse de votre grand-pere ! "
   look:
     actor: |
       Rien a voir de plus ici
@@ -28,7 +28,7 @@ events:
     actor: "Grenier"
   look:
     actor: |
-      Vous êtes dans le grenier de la maison. Au fond a droite, vous apercevez la borne d'arcade. A gauche, un coin sombre vous intrigue. Accroché sur le mur, vous trouvez le vieux casque à lampe frontale de votre tonton Stéphane.
+      Vous etes dans le grenier de la maison. A l'est, vous apercevez la borne d'arcade. Au fond a l'ouest, il fais trop sombre et vous n'y voyez rien. Accroche sur le mur, vous remarquez le vieux casque a lampe frontale de votre tonton Stephane.
 ---
 id: coin-000
 type: Location
@@ -38,21 +38,20 @@ contains:
   - piece-000
 events:
   info:
-    actor: "Un coin sombre."
+    actor: "Ouest du grenier"
   look:
     actor: |
-      Vous êtes dans au bout de la salle.
-      Grâce à votre lampe accroché a votre casque, vous arrivez a apercevoir une piece au sol.
-    
+      Vous êtes au bout du grenier, vous entendez la pluie qui frappe la toiture.
+      Grace a votre lampe frontale vous apercevez une piece doree au sol.
 ---
 id: borne-000
 type: Location
 events:
   info:
-    actor: "La borne démarre! Les meilleurs scores apparaissent à l'écran."
+    actor: "Est du grenier"
   look:
     actor: |
-      Les meilleurs scores. Devant vos yeux se trouve une énigme.
+      Vous etes devant la borne d'arcade, celle-ci semble attendre quelque chose ...
 
 
 # ============= OBJETS =============
@@ -71,19 +70,17 @@ events:
   info:
     actor:
       - props: =lampe-000:light-on
-        data : "Un casque à lampe frontale. Elle est allumée."
-      - data : "Un casque à lampe frontale. Elle est éteinte."
+        data : "Une lampe frontale allumee"
+      - data : "Un lampe frontale eteinte"
   look:
     actor:
       - props: object:light-on
-        data : "Un casque à lampe frontale. Elle est allumée"
-      - data : "Un casque à lampe frontale. Elle est éteinte."
+        data : "Le vieux casque a lampe frontale de votre tonton Stephane. La lampe est allumee"
+      - data : "Le vieux casque a lampe frontale de votre tonton Stephane. La lampe est eteinte"
   light-on:
     - props : object:light-on
       actor : "La lampe est déjà allumée."
     - actor : "Vous allumez votre lampe frontale."
-      observer: |
-        {{ actor.name }} allume sa lampe frontale.
       effects:
         - type  : ChangePropEffect
           modifs: object:light-on
@@ -91,8 +88,6 @@ events:
     - props : -object:light-on
       actor : "La lampe est déjà éteinte."
     - actor : "Vous éteignez votre lampe frontale."
-      observer: |
-        {{ actor.name }} éteind sa lampe frontale.
       effects:
         - type  : ChangePropEffect
           modifs: -object:light-on
@@ -101,18 +96,19 @@ id: piece-000
 type: Thing
 props:
   - takable
-name: 
-    - piece 
-    - pièce
+  - key-for-grenier-borne-000
+name:
+    - piece
+gender: fem
 events:
   info:
-    actor: "Une pièce"
+    actor: "Une piece"
   look:
     actor: |
-      Une pièce.
-  
+      Une piece.
 
 # ============= PORTAILS =============
+
 ---
 id: portal-regles-intro-000
 type: Portal
@@ -128,7 +124,7 @@ exits:
     direction: sens_interdit
     events:
       enter-portal:
-        actor   : "PAS SENSE MARCHER"
+        actor   : "XXX"
 ---
 id: portal-intro-grenier-000
 type: Portal
@@ -144,7 +140,7 @@ exits:
     direction: sens_interdit
     events:
       enter-portal:
-        actor   : "PAS SENSE MARCHER"
+        actor   : "XXX"
 ---
 id: portal-grenier-coin-000
 type: Portal
@@ -158,6 +154,22 @@ exits:
   - id: coin-000-est
     location: coin-000
     direction: est
+    events:
+      enter-portal:
+        actor   : "Vous revenez au centre du grenier"
+---
+id: portal-grenier-borne-000
+type: Portal
+exits:
+  - id: grenier-000-est
+    location: grenier-000
+    direction: est
+    events:
+      enter-portal:
+        actor   : "Vous vous dirigez vers la borne d'arcade"
+  - id: borne-000-ouest
+    location: borne-000
+    direction: ouest
     events:
       enter-portal:
         actor   : "Vous revenez au centre du grenier"
