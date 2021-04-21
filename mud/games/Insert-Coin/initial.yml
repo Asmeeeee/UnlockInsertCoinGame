@@ -29,7 +29,45 @@ events:
       Vous êtes dans le grenier de la maison. Au fond a droite, vous apercevez la borne d'arcade. A gauche, le grenier.
 
 # ============= OBJETS =============
-
+---
+id: lampe-000
+type: Thing
+props:
+  - lightable
+  - takable
+names   :
+  - lampe
+  - lampe-torche
+gender: fem
+events:
+  info:
+    actor:
+      - props: =lampe-000:light-on
+        data : "Une lampe-torche allumée."
+      - data : "Une lampe-torche éteinte."
+  look:
+    actor:
+      - props: object:light-on
+        data : "Une lampe-torche allumée."
+      - data : "Une lampe-torche éteinte."
+  light-on:
+    - props : object:light-on
+      actor : "La lampe est déjà allumée."
+    - actor : "Vous allumez votre lampe-torche."
+      observer: |
+        {{ actor.name }} allume sa lampe-torche.
+      effects:
+        - type  : ChangePropEffect
+          modifs: object:light-on
+  light-off:
+    - props : -object:light-on
+      actor : "La lampe est déjà éteinte."
+    - actor : "Vous éteignez votre lampe-torche."
+      observer: |
+        {{ actor.name }} éteind sa lampe-torche.
+      effects:
+        - type  : ChangePropEffect
+          modifs: -object:light-on
 
 
 # ============= PORTAILS =============
