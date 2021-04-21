@@ -1,9 +1,51 @@
 # ============= LIEUX =============
 
-
+---
+id: regles-000
+type: Location
+events:
+  info:
+    actor: "REGLES DU JEUX + image InsertCoin ... Tapez 'Start' pour commencer"
+  look:
+    actor: |
+      Rien a voir de plus ici
+---
+id: intro-000
+type: Location
+events:
+  info:
+    actor: "Un long dimanche d'automne. Votre téléphone est à court de batterie. Plus qu'une solution pour tuer l'ennui: direction le grenier de la maison ou sommeille la vieille borne d'arcade poussiereuse de votre grand-pere !"
+  look:
+    actor: |
+      Rien a voir de plus ici
+---
+id: grenier-000
+type: Location
+events:
+  info:
+    actor: "Un grenier"
+  look:
+    actor: |
+      Vous voyez un coin sombre à l'est, et une borne d'arcade à l'ouest
 
 # ============= OBJETS =============
 
 
 
 # ============= PORTAILS =============
+---
+id: portal-regles-intro-000
+type: Portal
+exits:
+  - id: regles-000-start
+    location: regles-000
+    direction: start
+    events:
+      enter-portal:
+        actor   : "INSERT COIN"
+  - id: intro-000-sens_interdit
+    location: intro-000
+    direction: sens_interdit
+    events:
+      enter-portal:
+        actor   : "PAS SENSE MARCHER"

@@ -2,7 +2,7 @@
 # Copyright (C) 2014 Denys Duchier, IUT d'Orléans
 #==============================================================================
 
-from .action                      import Action2
+from .action                      import Action2, Action1
 from mud.events                   import TeleportEvent
 from mud.models.mixins.containing import Containing
 from mud.models                   import Player

@@ -1,4 +1,4 @@
-start: parking-000
+start: regles-000
 directions:
   normalized:
     nord      : nord
@@ -27,7 +27,8 @@ directions:
     b         : bas
     monter    : haut
     grimper   : haut
-    descendre : bas
+    start     : start
+    azertyqsd : sens_interdit
   noun_the:
     nord      : le nord
     est       : l'est
@@ -217,14 +218,6 @@ events:
     not-found:
       actor: |
         Aucune destination trouvée!
-    ambiguous:
-      actor: |
-        Destination ambigue!  Les options possibles sont:
-        <ul>
-        {% for k in object %}
-        <li>{{ k.id }}</li>
-        {% end %}
-        </ul>
     departure:
       observer: |
         {{ actor.name }} disparaît par téléportation!
