@@ -126,7 +126,6 @@ events:
 id: borne-verrouille-001
 type: Thing
 name:
-    - borne
     - arcade
 gender: fem
 events:
@@ -139,7 +138,6 @@ events:
 id: borne-deverrouille-001
 type: Thing
 names:
-  - borne
   - arcade
 gender: fem
 props:
@@ -215,6 +213,8 @@ exits:
   - id: grenier-000-est
     location: grenier-000
     direction: est
+    name:
+        - borne
     events:
       enter-portal:
         actor   : "Vous vous dirigez vers la borne d'arcade"
