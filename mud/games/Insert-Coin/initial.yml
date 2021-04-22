@@ -43,6 +43,8 @@ events:
     actor: |
       Vous êtes au bout du grenier, vous entendez la pluie qui frappe la toiture.
       Grace a votre lampe frontale vous apercevez une piece doree au sol.
+      </p> <img src=\"https://cdn.discordapp.com/attachments/803280892691873893/834763062871457822/Image_GrenierSombre.JPG\"> <p>
+      </p> <img src=\"https://cdn.discordapp.com/attachments/498184586736435202/834693589681831977/Image_InsertCoin.JPG\">
 ---
 id: borne-verrouille-000
 type: Location
@@ -122,6 +124,7 @@ events:
   look:
     actor: |
       Une piece.
+      </p> <img src=\"https://cdn.discordapp.com/attachments/803280892691873893/834764506210238474/Image_Piece.JPG\"> <p>
 ---
 id: borne-verrouille-001
 type: Thing
@@ -134,6 +137,7 @@ events:
   look:
     actor: |
       L'ecran est allumé, il affiche clairement <i>Appuyez sur PLAY pour commencer !</i>
+      </p> <img src=\"https://cdn.discordapp.com/attachments/498184586736435202/834762861070516234/Image_BorneArcade.JPG\"> <p>
 ---
 id: borne-deverrouille-001
 type: Thing
@@ -144,7 +148,6 @@ props:
   - light-on
 events:
   info:
-    #</p> <img source=\
     actor: "Une borne d'arcade"
   look:
     actor: |
