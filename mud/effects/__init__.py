@@ -14,6 +14,6 @@ from .light      import LightOnEffect, LightOffEffect
 from .look       import LookEffect
 from .open       import OpenEffect, OpenWithEffect
 from .push       import PushEffect
-from .take       import TakeEffect
+from .take       import TakeEffect, TakeEffect2
 from .type       import TypeEffect
 from .narrative  import NarrativeEffect

@@ -6,7 +6,7 @@ from .failedaction import FailedActionEvent
 from .go           import EnterPortalEvent, TraversePortalEvent, LeavePortalEvent, MoveEvent
 from .look         import LookEvent
 from .inspect      import InspectEvent
-from .take         import TakeEvent
+from .take         import TakeEvent, TakeEvent2
 from .light        import LightOnEvent, LightOffEvent
 from .changeprop   import ChangePropEvent
 from .open         import OpenEvent, OpenWithEvent, OpenWithEvent2

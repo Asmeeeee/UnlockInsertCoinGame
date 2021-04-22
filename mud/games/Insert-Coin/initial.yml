@@ -288,6 +288,23 @@ events:
     actor: |
       Une pioche.
       </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783155973652590/Image_TNT.JPG"> <p>
+---
+id: cybercasque-000
+type: Thing
+props:
+  - takable
+name:
+    - cybercasque
+    - casque
+gender: mas
+events:
+  info:
+    actor: "Un cybercasque."
+  look:
+    actor: |
+      Votre cybercasque flambant neuf !
+      <br> INSERER IMAGE CYBERCASQUE
+
 # ============= PORTAILS =============
 
 ---
@@ -471,7 +488,12 @@ exits:
     events:
       enter-portal:
         actor: |
-          </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834871800658788392/Image_Intro3.JPG"> <p><br>Equipes simplement de votre cyberscasque et d'une potion de vie, affrontez les pieges de Wolfix et sauvez la princesse !<br><Strong>START</Strong>
+          </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834871800658788392/Image_Intro3.JPG"> <p> <br>Equipes simplement de votre cyberscasque et d'une potion de vie, affrontez les pieges de Wolfix et sauvez la princesse !<br><Strong>START</Strong>
+        effects:
+        - type: TakeEffect2
+          object: potion-000
+        - type: TakeEffect2
+          object: cybercasque-000
   - id: intro-jeux-3-000-sens_interdit
     location: intro-jeux-3-000
     direction: sens_interdit
