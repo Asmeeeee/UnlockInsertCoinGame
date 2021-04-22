@@ -63,10 +63,10 @@ contains:
   - borne-deverrouille-001
 events:
   info:
-    actor: "Est du grenier"
+    actor: "Borne d'arcade"
   look:
     actor: |
-      Vous etes a l'est du grenier. C'est la partie la plus eclairee de ce dernier.'
+      Affiche sur l'ecran, vous constatez les performances impressionnantes des precedents joueurs. <br> </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834782988948340766/Image_EnigmeHighScores.JPG"> <p>
 ---
 id: jungle-000
 type: Location
@@ -176,21 +176,21 @@ id: borne-deverrouille-001
 type: Thing
 names:
   - arcade
+  - ecran
 gender: fem
 props:
   - light-on
 events:
   info:
-    actor: "Affiche sur l'ecran, vous constatez les performances impressionantes des precedents joueurs.<br>
-        </p> <img src=\"https://cdn.discordapp.com/attachments/803280892691873893/834782988948340766/Image_EnigmeHighScores.JPG\"> <p>"
+    actor: "La borne d'arcade"
   look:
     actor: |
-      Vous constatez les performances impressionnantes des precedents joueurs, affiche sur l'ecran.
+      </p> <br> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834782988948340766/Image_EnigmeHighScores.JPG"> <p> <br> <strong> <i> EXIT </i></strong>
   type:
     - props: event:typed-5938
       effects:
         - type  : EnterPortalEffect
-          exit  : =portal-borne-jungle-000-exit-1
+          exit  : =portal-borne-deverrouille-jungle-000
     - actor: |
         Ce n'est pas le bon code.
 ---
@@ -396,5 +396,23 @@ exits:
     events:
       enter-portal:
         actor   : "Vous quittez la borne d'arcade"
-
-# tes 22041317
+---
+id: portal-borne-jungle-000
+type: Portal
+exits:
+  - id: portal-borne-deverrouille-jungle-000
+    location: borne-deverrouille-000
+    events:
+      enter-portal:
+        actor: |
+          Vous vous faites aspirer dans le jeux
+      leave-portal:
+        actor   : "Vous apparaissez dans une jungle sauvage, il y a du bruit ect ..."
+  - id: portal-jungle-borne-deverrouille-000
+    location: jungle-000
+    events:
+      enter-portal:
+        actor: |
+          XXX
+      leave-portal:
+        actor   : "XXX"
