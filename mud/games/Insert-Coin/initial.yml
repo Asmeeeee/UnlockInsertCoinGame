@@ -23,6 +23,7 @@ id: grenier-000
 type: Location
 contains:
   - lampe-000
+  - myrtille-000
 events:
   info:
     actor: "Grenier"
@@ -124,6 +125,25 @@ events:
     actor: |
       Une piece.
       </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834764506210238474/Image_Piece.JPG"> <p>
+
+---
+id: myrtille-000
+type: Thing
+props:
+  - takable
+name:
+    - jus_de_myrtille
+    - jus
+    - myrtille
+    - jus-de-myrtille
+gender: mas
+events:
+  info:
+    actor: "Un jus de myrtille"
+  look:
+    actor: |
+      Un jus de myrtille
+      </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783113846587404/Image_JusDeMyrtille.JPG"> <p>
 ---
 id: borne-verrouille-001
 type: Thing
@@ -244,10 +264,11 @@ exits:
       - for-enter
     events:
       enter-portal:
-        actor     : "Les meilleurs scores s'affichent."
+        actor     : "Les meilleurs scores s'affichent.<br>Un code doit etre insere.
+        </p> <img src=\"https://cdn.discordapp.com/attachments/803280892691873893/834782988948340766/Image_EnigmeHighScores.JPG\"> <p>"
         failed:
           actor   : &porte001 |
-            Rien ne se passe ... La borne d'arcade semble attendre quelque chose d'autre avant.
+            Rien ne se passe ... La borne d'arcade a besoin d'une piece pour fonctionner.
           observer: &porte002 |
             {{ actor.name }} tente en vain d'ouvrir la porte du
             département info.

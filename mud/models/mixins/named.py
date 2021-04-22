@@ -23,6 +23,7 @@ class Named(Basic):
 
     GENDER = {
         "masc"  : "masculine",
+        "mas"   : "masculine",
         "m"     : "masculine",
         "fem"   : "feminine" ,
         "f"     : "feminine" ,
