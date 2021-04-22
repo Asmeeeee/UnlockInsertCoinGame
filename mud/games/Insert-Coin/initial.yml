@@ -144,7 +144,7 @@ props:
   - light-on
 events:
   info:
-    </p> <img source=\
+    #</p> <img source=\
     actor: "Une borne d'arcade"
   look:
     actor: |
