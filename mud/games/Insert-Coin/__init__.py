@@ -36,5 +36,5 @@ def make_rules():
         (TeleportAction , r"tele(?:porter|) (\S+)"),
         (EnterAction    , r"entrer"),
         (LeaveAction    , r"sortir|partir"),
-        (OpenWithAction2 , r"(mettre|inserer) %s(\S+) dans %s(\w+)" % (DETS,DETS)),
+        (OpenWithAction2 , r"mettre %s(\w+) dans %s(\S+)" % (DETS,DETS)),
     )

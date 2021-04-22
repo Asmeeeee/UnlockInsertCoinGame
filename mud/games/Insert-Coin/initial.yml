@@ -5,7 +5,7 @@ id: regles-000
 type: Location
 events:
   info:
-    actor: "REGLES DU JEUX + image InsertCoin ... Tapez 'Start' pour commencer"
+    actor: "</p> <img src=\"https://cdn.discordapp.com/attachments/498184586736435202/834693589681831977/Image_InsertCoin.JPG\"> <p>REGLES DU JEUX  ... Tapez 'Start' pour commencer"
   look:
     actor: |
       Rien a voir de plus ici
@@ -112,7 +112,7 @@ id: piece-000
 type: Thing
 props:
   - takable
-  - key-for-grenier-borne-000
+  - key-for-borne-verrouille-borne-000
 name:
     - piece
 gender: fem
@@ -229,27 +229,32 @@ id: portal-borne-verrouille-borne-000
 type: Portal
 props:
   - closed
+  - closable
 exits:
   - id: borne-verrouille-000-play
     location: borne-verrouille-000
     direction: play
     name:
       - borne
-      - arcade
     gender: fem
     props:
       - for-enter
     events:
       enter-portal:
-        actor     : "L'ecran est allumé, il affiche clairement <i>Appuyez sur PLAY pour commencer !</i>"
+        actor     : "Les meilleurs scores s'affichent."
         failed:
           actor   : &porte001 |
             Rien ne se passe ... La borne d'arcade semble attendre quelque chose d'autre avant.
+          observer: &porte002 |
+            {{ actor.name }} tente en vain d'ouvrir la porte du
+            département info.
       leave-portal:
         actor     : "Vous quittez le jeux, la borne ne s'eteint pas pour autant."
+        observer  : "{{ actor.name }} sort du département info."
       open        :
         - props   : portal:closed
           actor   : *porte001
+          observer: *porte002
         - props   : -portal:closed
           actor   : &porte003 "Vous avez deja mis une piece dans la borne !"
       open-with   :
@@ -261,7 +266,7 @@ exits:
             modifs:
               - -portal:closed
           actor   : |
-            La machine semble toujours fonctionner ! Les meilleurs scores apparaissent a l'ecran.
+            La machine semble toujours fonctionner ! Une musique commence a sortir de la borne d'arcade.
         - props   :
             - portal:closed
             - -object2:key-for-borne-verrouille-borne-000
@@ -270,6 +275,14 @@ exits:
         - props   :
             - -portal:closed
           actor   : *porte003
+      close       : &porte004
+        - props   : portal:closed
+          actor   : "Vous fermez la porte du département."
+          observer: "{{ actor.name }} ferme le porte du département info."
+          effects :
+            - type  : ChangePropEffect
+              modifs: =portal-borne-verrouille-borne-000:closed
+      close-with  : *porte004
   - id: borne-deverrouille-000-exit
     location: borne-deverrouille-000
     direction: exit
