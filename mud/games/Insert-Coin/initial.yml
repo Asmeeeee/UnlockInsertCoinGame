@@ -469,9 +469,26 @@ exits:
     events:
       enter-portal:
         actor: |
-          </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783106518745169/Image_Intro2.JPG"> <p><br>Equipes simplement de votre cyberscasque et d'une potion de vie, affrontez les pieges de Wolfix et sauvez la princesse !<br><Strong>NEXT</Strong>
+          Equipes simplement de votre cyberscasque et d'une potion de vie, affrontez les pieges de Wolfix et sauvez la princesse !<br><Strong>START</Strong>
   - id: intro-jeux-3-000-sens_interdit
     location: intro-jeux-3-000
+    direction: sens_interdit
+    events:
+      enter-portal:
+        actor   : "XXX"
+---
+id: portal-intro-jeux-3-jungle-000
+type: Portal
+exits:
+  - id: intro-jeux-3-000-start
+    location: intro-jeux-3-000
+    direction: start
+    events:
+      enter-portal:
+        actor: |
+          Texte arrivée jungle
+  - id: jungle-000-sens_interdit
+    location: jungle-000
     direction: sens_interdit
     events:
       enter-portal:
