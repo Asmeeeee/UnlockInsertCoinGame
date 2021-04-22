@@ -91,6 +91,24 @@ events:
     actor: |
       Rien a voir de plus ici 
 ---
+id: intro-jeux-2-000
+type: Location
+events:
+  info:
+    actor: "SUPERBOY"
+  look:
+    actor: |
+      Rien a voir de plus ici 
+---
+id: intro-jeux-3-000
+type: Location
+events:
+  info:
+    actor: "SUPERBOY"
+  look:
+    actor: |
+      Rien a voir de plus ici 
+---
 id: caverne-mort-000
 type: Location
 events:
@@ -417,9 +435,43 @@ exits:
     events:
       enter-portal:
         actor: |
-          </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783093138128956/Image_Intro1.JPG"> <p><br><strong>Bienvenue dans SUPERBOY ... </strong>
+          </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783093138128956/Image_Intro1.JPG"> <p><br>Bienvenue dans SUPERBOY ...<br><Strong>NEXT</Strong> 
   - id: intro-jeux-1-000-sens_interdit
     location: intro-jeux-1-000
+    direction: sens_interdit
+    events:
+      enter-portal:
+        actor   : "XXX"
+---
+id: portal-intro-jeux-1-intro-jeux-2-000
+type: Portal
+exits:
+  - id: intro-jeux-1-000-next
+    location: intro-jeux-1-000
+    direction: next
+    events:
+      enter-portal:
+        actor: |
+          </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783106518745169/Image_Intro2.JPG"> <p><br>C'est la panique au royaume de Pique-Sel ! Princesse Marion a encore une fois ete enlevee par Wolfix !<br><Strong>NEXT</Strong>
+  - id: intro-jeux-2-000-sens_interdit
+    location: intro-jeux-2-000
+    direction: sens_interdit
+    events:
+      enter-portal:
+        actor   : "XXX"
+---
+id: portal-intro-jeux-2-intro-jeux-3-000
+type: Portal
+exits:
+  - id: intro-jeux-2-000-next
+    location: intro-jeux-2-000
+    direction: next
+    events:
+      enter-portal:
+        actor: |
+          </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783106518745169/Image_Intro2.JPG"> <p><br>Equipes simplement de votre cyberscasque et d'une potion de vie, affrontez les pieges de Wolfix et sauvez la princesse !<br><Strong>NEXT</Strong>
+  - id: intro-jeux-3-000-sens_interdit
+    location: intro-jeux-3-000
     direction: sens_interdit
     events:
       enter-portal:
