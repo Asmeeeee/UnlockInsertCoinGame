@@ -316,3 +316,4 @@ exits:
           observer: |
             {{ actor.name }} tente en vain de sortir par la porte
             du département info.
+# tes 22041317
