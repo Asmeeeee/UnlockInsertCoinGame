@@ -14,7 +14,7 @@ id: intro-000
 type: Location
 events:
   info:
-    actor: "Un long dimanche d'automne. Votre telephone est a court de batterie. Plus qu'une solution pour tuer l'ennui: direction le grenier de la maison ou sommeille la vieille borne d'arcade poussiereuse de votre grand-pere !<br>           <strong> SUIVANT </strong>"
+    actor: "Un long dimanche d'automne. Votre telephone est a court de batterie. Plus qu'une solution pour tuer l'ennui: direction le grenier de la maison ou sommeille la vieille borne d'arcade poussiereuse de votre grand-pere !<br>           <strong> NEXT </strong>"
   look:
     actor: |
       Rien a voir de plus ici
@@ -81,7 +81,15 @@ events:
   look:
     actor: |
       Vous etes dans une jungle.
-
+---
+id: intro-jeux-1-000
+type: Location
+events:
+  info:
+    actor: "SUPERBOY"
+  look:
+    actor: |
+      Rien a voir de plus ici 
 ---
 id: caverne-mort-000
 type: Location
@@ -284,9 +292,9 @@ exits:
 id: portal-intro-grenier-000
 type: Portal
 exits:
-  - id: intro-000-suivant
+  - id: intro-000-next
     location: intro-000
-    direction: suivant
+    direction: next
     events:
       enter-portal:
         actor   : "Vous arrivez dans le grenier de la maison"
@@ -400,20 +408,18 @@ exits:
       enter-portal:
         actor   : "Vous quittez la borne d'arcade"
 ---
-id: portal-borne-jungle-000
+id: portal-borne-intro-jeux-1-000
 type: Portal
 exits:
-  - id: portal-borne-deverrouille-jungle-mot_de_passe
+  - id: borne-5938-000
     location: borne-deverrouille-000
     direction: "5938"
     events:
       enter-portal:
         actor: |
-          Vous vous faites aspirer dans le jeux
-      leave-portal:
-        actor   : "Vous apparaissez dans une jungle sauvage, il y a du bruit ect ..."
-  - id: portal jungle-borne-deverrouille-000-sens_interdit
-    location: jungle-000
+          </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783093138128956/Image_Intro1.JPG"> <p><br><strong>Bienvenue dans SUPERBOY ... </strong>
+  - id: intro-jeux-1-000-sens_interdit
+    location: intro-jeux-1-000
     direction: sens_interdit
     events:
       enter-portal:

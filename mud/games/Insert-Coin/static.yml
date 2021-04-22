@@ -29,7 +29,7 @@ directions:
     grimper   : haut
     start     : start
     azertyqsd : sens_interdit
-    suivant   : suivant
+    next      : next
     play      : play
     exit      : exit
     "5938"    : "5938"
