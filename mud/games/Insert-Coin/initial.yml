@@ -5,7 +5,7 @@ id: regles-000
 type: Location
 events:
   info:
-    actor: "</p> <img src=\"https://cdn.discordapp.com/attachments/498184586736435202/834693589681831977/Image_InsertCoin.JPG\"> <p>REGLES DU JEUX  ...            <strong> START </strong>"
+    actor: "</p> <img src=\"https://cdn.discordapp.com/attachments/498184586736435202/834693589681831977/Image_InsertCoin.JPG\"> <p>REGLES DU JEUX  ...<br>            <strong> START </strong>"
   look:
     actor: |
       Rien a voir de plus ici
@@ -14,7 +14,7 @@ id: intro-000
 type: Location
 events:
   info:
-    actor: "Un long dimanche d'automne. Votre telephone est a court de batterie. Plus qu'une solution pour tuer l'ennui: direction le grenier de la maison ou sommeille la vieille borne d'arcade poussiereuse de votre grand-pere !           <strong> SUIVANT </strong>"
+    actor: "Un long dimanche d'automne. Votre telephone est a court de batterie. Plus qu'une solution pour tuer l'ennui: direction le grenier de la maison ou sommeille la vieille borne d'arcade poussiereuse de votre grand-pere !<br>           <strong> SUIVANT </strong>"
   look:
     actor: |
       Rien a voir de plus ici
@@ -141,8 +141,8 @@ type: Thing
 props:
   - takable
 name:
-    - jus_de_myrtille
     - jus
+    - jus_de_myrtille
     - myrtille
     - jus-de-myrtille
 gender: mas
@@ -152,7 +152,7 @@ events:
   look:
     actor: |
       Un jus de myrtille
-      </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783113846587404/Image_JusDeMyrtille.JPG"> <p>
+      </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834809006430224424/Image_JusDeMyrtille.JPG"> <p>
 ---
 id: borne-verrouille-001
 type: Thing
@@ -161,10 +161,11 @@ name:
 gender: fem
 events:
   info:
-    actor: "Une borne d'arcade"
+    actor: "Une borne d'arcade. L'ecran est allumé, il affiche clairement <i>Appuyez sur <strong>PLAY</strong> pour commencer !</i>
+      </p> <img src=\"https://cdn.discordapp.com/attachments/498184586736435202/834762861070516234/Image_BorneArcade.JPG\"> <p>"
   look:
     actor: |
-      L'ecran est allumé, il affiche clairement <i>Appuyez sur PLAY pour commencer !</i>
+      <i>Appuyez sur PLAY pour commencer !</i>
       </p> <img src="https://cdn.discordapp.com/attachments/498184586736435202/834762861070516234/Image_BorneArcade.JPG"> <p>
 ---
 id: borne-deverrouille-001
@@ -176,7 +177,8 @@ props:
   - light-on
 events:
   info:
-    actor: "Une borne d'arcade"
+    actor: "Affiche sur l'ecran, vous constatez les performances impressionantes des precedents joueurs.<br>
+        </p> <img src=\"https://cdn.discordapp.com/attachments/803280892691873893/834782988948340766/Image_EnigmeHighScores.JPG\"> <p>"
   look:
     actor: |
       Vous constatez les performances impressionnantes des precedents joueurs, affiche sur l'ecran.
@@ -273,11 +275,10 @@ exits:
       - for-enter
     events:
       enter-portal:
-        actor     : "Les meilleurs scores s'affichent.<br>Un code doit etre insere.
-        </p> <img src=\"https://cdn.discordapp.com/attachments/803280892691873893/834782988948340766/Image_EnigmeHighScores.JPG\"> <p>"
+        actor     : "Le tableau des scores s'affiche</p> <br> <img src=\"https://cdn.discordapp.com/attachments/803280892691873893/834782988948340766/Image_EnigmeHighScores.JPG\"> <p> <br> <strong> <i> EXIT </i></strong>"
         failed:
           actor   : &porte001 |
-            Rien ne se passe ... La borne d'arcade a besoin d'une piece pour fonctionner.
+            Rien ne se passe ... La borne d'arcade semble attendre quelque chose.
           observer: &porte002 |
             {{ actor.name }} tente en vain d'ouvrir la porte du
             département info.
