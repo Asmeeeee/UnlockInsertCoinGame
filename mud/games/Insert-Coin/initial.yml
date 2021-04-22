@@ -436,6 +436,8 @@ exits:
       enter-portal:
         actor: |
           </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783093138128956/Image_Intro1.JPG"> <p><br>Bienvenue dans SUPERBOY ...<br><Strong>NEXT</Strong>
+        effects:
+          - type: ClearEffect
   - id: intro-jeux-1-000-sens_interdit
     location: intro-jeux-1-000
     direction: sens_interdit

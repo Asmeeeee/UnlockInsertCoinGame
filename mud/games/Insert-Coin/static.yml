@@ -176,10 +176,6 @@ events:
     observer: |
       {{ actor.name }} laisse ici {{ object.noun_a() }}
 
-  clear:
-    actor: |
-      Votre inventaire s'est fais vider (1)
-
   drop-in:
     - props: event:object2-not-container
       actor: |

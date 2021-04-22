@@ -6,7 +6,7 @@ from .changeprop import ChangePropEffect
 from .go         import EnterPortalEffect, TraversePortalEffect, LeavePortalEffect, MoveEffect
 from .death      import DeathEffect
 from .close      import CloseEffect, CloseWithEffect
-from .drop       import DropEffect, DropInEffect
+from .drop       import DropEffect, DropInEffect, ClearEffect
 from .info       import InfoEffect
 from .inspect    import InspectEffect
 from .inventory  import InventoryEffect

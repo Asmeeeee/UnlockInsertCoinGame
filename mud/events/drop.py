@@ -36,4 +36,3 @@ class ClearEvent(Event1):
 
     def perform(self):
         self.actor._contents.clear()
-        self.inform("clear")
