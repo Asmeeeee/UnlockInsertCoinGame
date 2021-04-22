@@ -67,7 +67,16 @@ events:
   look:
     actor: |
       Vous etes a l'est du grenier. C'est la partie la plus eclairee de ce dernier.'
-
+---
+id: jungle-000
+type: Location
+#contains: potion de vie, pioche, tnt, ressort portatif
+events:
+  info:
+    actor: "Jungle"
+  look:
+    actor: |
+      Vous etes dans une jungle.
 
 # ============= OBJETS =============
 
