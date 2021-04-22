@@ -6,7 +6,7 @@ from mud.actions import (
     GoAction, TakeAction, LookAction, InspectAction, OpenAction,
     OpenWithAction, CloseAction, TypeAction, InventoryAction,
     LightOnAction, LightOffAction, DropAction, DropInAction,
-    PushAction, TeleportAction, EnterAction, LeaveAction, OpenWithAction2
+    PushAction, TeleportAction, EnterAction, LeaveAction,
 )
 
 import mud.game
@@ -36,5 +36,5 @@ def make_rules():
         (TeleportAction , r"tele(?:porter|) (\S+)"),
         (EnterAction    , r"entrer"),
         (LeaveAction    , r"sortir|partir"),
-        (OpenWithAction2 , r"mettre %s(\w+) dans %s(\S+)" % (DETS,DETS)),
+        (OpenWithAction , r"mettre %s(\S+) dans %s(\w+)" % (DETS,DETS)),
     )

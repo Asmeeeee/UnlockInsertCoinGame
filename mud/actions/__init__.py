@@ -5,7 +5,7 @@
 from .go        import GoAction, LeaveAction, EnterAction
 from .inspect   import InspectAction
 from .look      import LookAction
-from .open      import OpenAction, OpenWithAction, OpenWithAction2
+from .open      import OpenAction, OpenWithAction
 from .close     import CloseAction
 from .type      import TypeAction
 from .take      import TakeAction
