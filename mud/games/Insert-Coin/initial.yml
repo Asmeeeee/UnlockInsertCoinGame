@@ -82,6 +82,16 @@ events:
     actor: |
       Vous etes dans une jungle.
 
+---
+id: caverne-mort-000
+type: Location
+events:
+  info:
+    actor: "Vous etes mort"
+  look:
+    actor: |
+      Vous avez succombé.
+
 # ============= OBJETS =============
 
 ---
