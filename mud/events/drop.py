@@ -2,7 +2,7 @@
 # Copyright (C) 2014 Denys Duchier, IUT d'Orléans
 #==============================================================================
 
-from .event import Event2, Event3
+from .event import Event2, Event3, Event1
 
 
 class DropEvent(Event2):
@@ -30,3 +30,10 @@ class DropInEvent(Event3):
     def drop_in_failure(self):
         self.fail()
         self.inform("drop-in.failed")
+
+class ClearEvent(Event1):
+    NAME = "clear"
+
+    def perform(self):
+        self.actor._contents.clear()
+        self.inform("clear")

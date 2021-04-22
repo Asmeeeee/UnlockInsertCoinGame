@@ -435,7 +435,7 @@ exits:
     events:
       enter-portal:
         actor: |
-          </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783093138128956/Image_Intro1.JPG"> <p><br>Bienvenue dans SUPERBOY ...<br><Strong>NEXT</Strong> 
+          </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783093138128956/Image_Intro1.JPG"> <p><br>Bienvenue dans SUPERBOY ...<br><Strong>NEXT</Strong>
   - id: intro-jeux-1-000-sens_interdit
     location: intro-jeux-1-000
     direction: sens_interdit
@@ -486,7 +486,7 @@ exits:
     events:
       enter-portal:
         actor: |
-          </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834870604322177094/Image_Jungle.JPG"> <p><br>Texte jungle!<br>
+          D'etranges lumieres jaillissent de la machine et le temps <br> </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834870604322177094/Image_Jungle.JPG"> <p>Texte jungle!<br>
   - id: jungle-000-sens_interdit
     location: jungle-000
     direction: sens_interdit

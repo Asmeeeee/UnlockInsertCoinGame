@@ -11,6 +11,6 @@ from .type      import TypeAction
 from .take      import TakeAction
 from .inventory import InventoryAction
 from .light     import LightOnAction, LightOffAction
-from .drop      import DropAction, DropInAction
+from .drop      import DropAction, DropInAction, ClearAction
 from .push      import PushAction
 from .teleport  import TeleportAction

@@ -19,7 +19,7 @@ class Parser:
         apostrophes into spaces, and ensuring that words are separated by
         single spaces.
 
-        If no rule matched, then None,TEXT is returned.  
+        If no rule matched, then None,TEXT is returned.
         """
         text = " ".join(text.split("'"))
         text = " ".join(text.strip().lower().split())
