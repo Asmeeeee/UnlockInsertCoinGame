@@ -5,7 +5,7 @@ id: regles-000
 type: Location
 events:
   info:
-    actor: "</p> <img src=\"https://cdn.discordapp.com/attachments/498184586736435202/834693589681831977/Image_InsertCoin.JPG\"> <p>REGLES DU JEUX  ... Tapez 'Start' pour commencer"
+    actor: "</p> <img src=\"https://cdn.discordapp.com/attachments/498184586736435202/834693589681831977/Image_InsertCoin.JPG\"> <p>REGLES DU JEUX  ...            <strong> START </strong>"
   look:
     actor: |
       Rien a voir de plus ici
@@ -14,7 +14,7 @@ id: intro-000
 type: Location
 events:
   info:
-    actor: "Un long dimanche d'automne. Votre telephone est a court de batterie. Plus qu'une solution pour tuer l'ennui: direction le grenier de la maison ou sommeille la vieille borne d'arcade poussiereuse de votre grand-pere ! "
+    actor: "Un long dimanche d'automne. Votre telephone est a court de batterie. Plus qu'une solution pour tuer l'ennui: direction le grenier de la maison ou sommeille la vieille borne d'arcade poussiereuse de votre grand-pere !           <strong> SUIVANT </strong>"
   look:
     actor: |
       Rien a voir de plus ici
@@ -242,25 +242,22 @@ exits:
       - for-enter
     events:
       enter-portal:
-        actor     : "Vous entrez dans le département info."
-        observer  : "{{ actor.name }} entre dans le département info."
+        actor     : "Les meilleurs scores s'affichent."
         failed:
           actor   : &porte001 |
-            La porte d'accès au département info est sécurisée.
-            Elle est actuellement fermée et ne peut être ouverte
-            qu'avec un badge de sécurité.
+            Rien ne se passe ... La borne d'arcade semble attendre quelque chose d'autre avant.
           observer: &porte002 |
             {{ actor.name }} tente en vain d'ouvrir la porte du
             département info.
       leave-portal:
-        actor     : "Vous sortez du département info."
+        actor     : "Vous quittez le jeux, la borne ne s'eteint pas pour autant."
         observer  : "{{ actor.name }} sort du département info."
       open        :
         - props   : portal:closed
           actor   : *porte001
           observer: *porte002
         - props   : -portal:closed
-          actor   : &porte003 "La porte est déjà ouverte!"
+          actor   : &porte003 "Vous avez deja mis une piece dans la borne !"
       open-with   :
         - props   :
             - portal:closed
@@ -270,26 +267,15 @@ exits:
             modifs:
               - -portal:closed
           actor   : |
-            La porte du département s'ouvre avec un déclic.
-          observer: |
-            {{ actor.name }} ouvre la porte du département info
-            avec un badge de sécurité.
+            La machine semble toujours fonctionner ! Une musique commence a sortir de la borne d'arcade.
         - props   :
             - portal:closed
             - -object2:key-for-borne-verrouille-borne-000
           actor   : |
-            Vous tentez vainement d'ouvrir la porte avec
-            {{ object2.noun_the() }}
-          observer: |
-            {{ actor.name }} tente vainement d'ouvrir la porte du
-            département info avec {{ object2.noun_a() }}
+            Vous tentez vainement de mettre {{ object2.noun_the() }} dans la fente de la borne.
         - props   :
             - -portal:closed
           actor   : *porte003
-          observer: |
-            {{ actor.name }} tente futilement d'ouvrir la porte du
-            département info avec {{ object2.noun_a() }}, alors
-            qu'elle est déjà ouverte.
       close       : &porte004
         - props   : portal:closed
           actor   : "Vous fermez la porte du département."
@@ -300,20 +286,13 @@ exits:
       close-with  : *porte004
   - id: borne-deverrouille-000-exit
     location: borne-deverrouille-000
-    direction: sud-ouest
+    direction: exit
     name: borne
     gender: fem
     props:
       - for-leave
     events:
       enter-portal:
-        observer  : "{{ actor.name }} sort du département info."
-        failed:
-          actor   : |
-            La porte d'accès au département info est sécurisée.
-            Elle est actuellement fermée et, même pour sortir,
-            elle ne peut être ouverte qu'avec un badge de sécurité.
-          observer: |
-            {{ actor.name }} tente en vain de sortir par la porte
-            du département info.
+        actor   : "Vous quittez la borne d'arcade"
+
 # tes 22041317
