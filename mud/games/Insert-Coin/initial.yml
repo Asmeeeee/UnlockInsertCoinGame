@@ -469,7 +469,7 @@ exits:
     events:
       enter-portal:
         actor: |
-          Equipes simplement de votre cyberscasque et d'une potion de vie, affrontez les pieges de Wolfix et sauvez la princesse !<br><Strong>START</Strong>
+          </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834871800658788392/Image_Intro3.JPG"> <p><br>Equipes simplement de votre cyberscasque et d'une potion de vie, affrontez les pieges de Wolfix et sauvez la princesse !<br><Strong>START</Strong>
   - id: intro-jeux-3-000-sens_interdit
     location: intro-jeux-3-000
     direction: sens_interdit
@@ -486,7 +486,7 @@ exits:
     events:
       enter-portal:
         actor: |
-          Texte arrivée jungle
+          </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834870604322177094/Image_Jungle.JPG"> <p><br>Texte jungle!<br>
   - id: jungle-000-sens_interdit
     location: jungle-000
     direction: sens_interdit
