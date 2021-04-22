@@ -246,16 +246,11 @@ exits:
         failed:
           actor   : &porte001 |
             Rien ne se passe ... La borne d'arcade semble attendre quelque chose d'autre avant.
-          observer: &porte002 |
-            {{ actor.name }} tente en vain d'ouvrir la porte du
-            département info.
       leave-portal:
         actor     : "Vous quittez le jeux, la borne ne s'eteint pas pour autant."
-        observer  : "{{ actor.name }} sort du département info."
       open        :
         - props   : portal:closed
           actor   : *porte001
-          observer: *porte002
         - props   : -portal:closed
           actor   : &porte003 "Vous avez deja mis une piece dans la borne !"
       open-with   :
@@ -278,8 +273,7 @@ exits:
           actor   : *porte003
       close       : &porte004
         - props   : portal:closed
-          actor   : "Vous fermez la porte du département."
-          observer: "{{ actor.name }} ferme le porte du département info."
+          actor   : "Vous fermez la borne ?"
           effects :
             - type  : ChangePropEffect
               modifs: =portal-borne-verrouille-borne-000:closed
@@ -294,4 +288,3 @@ exits:
     events:
       enter-portal:
         actor   : "Vous quittez la borne d'arcade"
-        #test
