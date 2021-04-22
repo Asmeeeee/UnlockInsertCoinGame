@@ -144,6 +144,7 @@ props:
   - light-on
 events:
   info:
+    </p> <img source=\
     actor: "Une borne d'arcade"
   look:
     actor: |
@@ -293,3 +294,4 @@ exits:
     events:
       enter-portal:
         actor   : "Vous quittez la borne d'arcade"
+        #test
