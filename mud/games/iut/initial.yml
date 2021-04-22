@@ -284,6 +284,7 @@ type: Thing
 names:
   - ordinateur
   - ordi
+  - pc
 props:
   - light-on
 events:

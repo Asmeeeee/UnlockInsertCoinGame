@@ -182,17 +182,10 @@ props:
   - light-on
 events:
   info:
-    actor: "La borne d'arcade"
+    actor: "Une borne d'arcade."
   look:
     actor: |
       </p> <br> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834782988948340766/Image_EnigmeHighScores.JPG"> <p> <br> <strong> <i> EXIT </i></strong>
-  type:
-    - props: event:typed-5938
-      effects:
-        - type  : EnterPortalEffect
-          exit  : =portal-borne-deverrouille-jungle-000
-    - actor: |
-        Ce n'est pas le bon code.
 ---
 id: potion-000
 type: Thing
@@ -400,19 +393,18 @@ exits:
 id: portal-borne-jungle-000
 type: Portal
 exits:
-  - id: portal-borne-deverrouille-jungle-000
+  - id: portal-borne-deverrouille-jungle-mot_de_passe
     location: borne-deverrouille-000
+    direction: "5938"
     events:
       enter-portal:
         actor: |
           Vous vous faites aspirer dans le jeux
       leave-portal:
         actor   : "Vous apparaissez dans une jungle sauvage, il y a du bruit ect ..."
-  - id: portal-jungle-borne-deverrouille-000
+  - id: portal jungle-borne-deverrouille-000-sens_interdit
     location: jungle-000
+    direction: sens_interdit
     events:
       enter-portal:
-        actor: |
-          XXX
-      leave-portal:
         actor   : "XXX"

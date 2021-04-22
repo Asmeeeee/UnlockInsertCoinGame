@@ -32,6 +32,7 @@ directions:
     suivant   : suivant
     play      : play
     exit      : exit
+    "5938"    : "5938"
   noun_the:
     nord      : le nord
     est       : l'est
