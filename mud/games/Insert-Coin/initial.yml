@@ -157,37 +157,34 @@ id: sommet-3vies-000
 type: Location
 events:
   info:
-    actor: "Sommet"
+    actor: Rocher
   look:
     actor: |
-      Vous vous trouvez au sommet du rocher.<br> Malgre vos demandes polies, Kong le gorille sauvage ne bougera pas.</p> <img src=" https://cdn.discordapp.com/attachments/803280892691873893/834783164823109642/Image_Kong3Vies.JPG"> <p>
-
+      Vous vous trouvez au sommet du rocher.<br> Malgre vos demandes polies, Kong le gorille sauvage ne bougera pas.</p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835150231569039401/Image_Kong3Vies.JPG"> <p>
 ---
 id: sommet-2vies-000
 type: Location
 events:
   info:
-    actor: Vous vous trouvez au sommet du rocher.<br> Kong a perdu un peu de vie, mais ca ne suffit pas a le detruire ! Enchainer les coups d'epee est le seul moyen de le battre.</p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783164899655690/Image_Kong2Vies.JPG"> <p>
+    actor: Rocher
   look:
     actor: |
-      Kong semble se regénéré. Il faut lui infligé plus de dégats. </p> <img src=" https://cdn.discordapp.com/attachments/803280892691873893/834783164823109642/Image_Kong3Vies.JPG"> <p>
-
+      Vous vous trouvez au sommet du rocher.<br> Malgre vos demandes polies, Kong le gorille sauvage ne bougera pas.</p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835150231569039401/Image_Kong3Vies.JPG"> <p>
 ---
 id: sommet-1vies-000
 type: Location
 events:
   info:
-    actor: Vous vous trouvez au sommet du rocher.<br>Kong a perdu un peu de vie, mais ca ne suffit pas a le detruire ! Enchainer les coups d'epee est le seul moyen de le battre.</p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783161988284426/Image_Kong1Vie.JPG"> <p>
+    actor: Rocher
   look:
     actor: |
-      Kong semble se regénéré. Il faut lui infligé plus de dégats. </p> <img src=" https://cdn.discordapp.com/attachments/803280892691873893/834783164823109642/Image_Kong3Vies.JPG"> <p>
-
+      Vous vous trouvez au sommet du rocher.<br> Malgre vos demandes polies, Kong le gorille sauvage ne bougera pas.</p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835150231569039401/Image_Kong3Vies.JPG"> <p>
 ---
 id: sommet-0vies-000
 type: Location
 events:
   info:
-    actor: Kong semble etre ko.</p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835136009678094356/Image_Kong.JPG"> <p>
+    actor: Rocher
   look:
       actor: |
         Kong est terrassé, le passage est sans danger.
@@ -777,13 +774,13 @@ exits:
     events:
       enter-portal:
         actor: |
-          Vous escalader le rocher
+          Vous escalader le rocher.
   - id: sommet-3vies-000-bas
     location: sommet-3vies-000
     direction: bas
     events:
       enter-portal:
-        actor   : "Vous descendez en bas du rocher."
+        actor   : "Vous redescendez en bas du rocher."
 
 ---
 id: portal-sommet-3vies-sommet-2vies-000
@@ -791,12 +788,48 @@ type: Portal
 exits:
   - id: sommet-3vies-000-attaque 
     location: sommet-3vies-000
-    direction: attaque 
+    direction: attaque1
     events:
       enter-portal:
-  - id: sommet-2vies-000-sens interdit
+        actor: |
+          Kong a perdu un peu de vie, mais ce ne suffit pas pour le detruire ! Enchainer les coups d'epee est le seul moyen de le battre. <br> </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835150225794269224/Image_Kong2Vies.JPG">
+  - id: sommet-2vies-000-sens_interdit
     location: sommet-2vies-000
-    direction: sens interdit 
+    direction: sens_interdit
+    events:
+      enter-portal:
+        actor   : "XXX"
+---
+id: portal-sommet-2vies-sommet-2vies-000
+type: Portal
+exits:
+  - id: sommet-2vies-000-attaque 
+    location: sommet-2vies-000
+    direction: attaque1
+    events:
+      enter-portal:
+        actor: |
+          Kong a perdu un peu de vie, mais ce ne suffit pas pour le detruire ! Enchainer les coups d'epee est le seul moyen de le battre. <br> </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835150225794269224/Image_Kong2Vies.JPG">
+  - id: sommet-2vies-000-sens_interdit2
+    location: sommet-2vies-000
+    direction: sens_interdit
+    events:
+      enter-portal:
+        actor   : "XXX"
+---
+id: portal-sommet-1vies-sommet-1vies-000
+type: Portal
+exits:
+  - id: sommet-1vies-000-attaque2
+    location: sommet-1vies-000
+    direction: attaque2
+    events:
+      enter-portal:
+        actor: |
+          C'est presque ca, encore un petit effort ! <br> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835150214812663878/Image_Kong1Vie.JPG">
+  - id: sommet-1vies-000-sens_interdit2
+    location: sommet-1vies-000
+    direction: sens_interdit
     events:
       enter-portal:
         actor   : "XXX"
@@ -809,12 +842,15 @@ exits:
     direction: attaque2
     events:
       enter-portal:
-  - id: sommet-1vies-000-sens interdit
+        actor: |
+          C'est presque ca, encore un petit effort ! <br> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835150214812663878/Image_Kong1Vie.JPG">
+  - id: sommet-1vies-000-attaque1
     location: sommet-1vies-000
-    direction: sens interdit 
+    direction: attaque1 
     events:
       enter-portal:
-        actor   : "XXX"
+        actor: |
+          Kong a perdu un peu de vie, mais ce ne suffit pas pour le detruire ! Enchainer les coups d'epee est le seul moyen de le battre. <br> </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835150225794269224/Image_Kong2Vies.JPG">
 ---
 id: portal-sommet-1vies-sommet-0vies-000
 type: Portal
@@ -824,8 +860,61 @@ exits:
     direction: attaque3
     events:
       enter-portal:
-  - id: sommet-0vies-000-sens interdit
+        actor: |
+          Le singe disparait dans un nuage et laisse echapper les restes de son repas.</p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835136009678094356/Image_Kong.JPG"> <p>
+  - id: sommet-0vies-000-sens_interdit1
     location: sommet-0vies-000
+    direction: sens interdit 
+    events:
+      enter-portal:
+        actor   : "XXX"
+---
+id: portal-sommet-2vies-sommet-0vies-000
+type: Portal
+exits:
+  - id: sommet-2vies-000-attaque3
+    location: sommet-2vies-000
+    direction: attaque3
+    events:
+      enter-portal:
+        actor: |
+          Le singe disparait dans un nuage et laisse echapper les restes de son repas.</p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835136009678094356/Image_Kong.JPG"> <p>
+  - id: sommet-0vies-000-sens_interdit2
+    location: sommet-0vies-000
+    direction: sens interdit 
+    events:
+      enter-portal:
+        actor   : "XXX"
+---
+id: portal-sommet-3vies-sommet-0vies-000
+type: Portal
+exits:
+  - id: sommet-3vies-000-attaque3
+    location: sommet-3vies-000
+    direction: attaque3
+    events:
+      enter-portal:
+        actor: |
+          Le singe disparait dans un nuage et laisse echapper les restes de son repas.</p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835136009678094356/Image_Kong.JPG"> <p>
+  - id: sommet-0vies-000-sens_interdit3
+    location: sommet-0vies-000
+    direction: sens interdit 
+    events:
+      enter-portal:
+        actor   : "XXX"
+---
+id: portal-sommet-3vies-sommet-1vies-000
+type: Portal
+exits:
+  - id: sommet-3vies-000-attaque2
+    location: sommet-3vies-000
+    direction: attaque2
+    events:
+      enter-portal:
+        actor: |
+          C'est presque ca, encore un petit effort ! <br> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835150214812663878/Image_Kong1Vie.JPG">
+  - id: sommet-0vies-000-sens_interdit4
+    location: sommet-1vies-000
     direction: sens interdit 
     events:
       enter-portal:

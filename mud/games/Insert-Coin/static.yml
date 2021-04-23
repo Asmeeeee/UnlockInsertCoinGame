@@ -16,9 +16,13 @@ directions:
     nord-ouest: nord-ouest
     "no"      : nord-ouest
     sudest    : sud-est
+    attaque   : attaque1
     attaque attaque : attaque2
     attaque attaque attaque : attaque3
-    epee : attaque
+    attaquer   : attaque1
+    attaquer attaquer : attaque2
+    attaquer attaquer attaquer : attaque3
+    epee : attaque1
     epee epee : attaque2
     epee epee epee : attaque3
     sud-est   : sud-est
