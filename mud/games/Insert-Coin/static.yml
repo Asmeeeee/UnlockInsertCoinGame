@@ -44,6 +44,12 @@ directions:
     play      : play
     exit      : exit
     "52"      : "52"
+    exit      : exit
+    quitter   : exit
+    arreter   : exit
+    arreter de jouer : exit
+    quitter le jeu  : exit
+    arreter le jeu  : exit
     "5938"    : "5938"
     "2484"    : "2484"
     l1 l2 haut bas gauche droite   : azerty
