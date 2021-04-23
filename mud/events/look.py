@@ -44,3 +44,18 @@ class LookEvent(Event1):
         self.buffer_clear()
         self.buffer_inform("look.failed.actor")
         self.actor.send_result(self.buffer_get())
+
+class HintEvent(Event1):
+    NAME = "hint"
+
+    def get_event_templates(self):
+        return self.actor.container().get_event_templates()
+
+    def perform(self):
+        self.inform("hint")
+
+    def look_failed(self):
+        self.fail()
+        self.buffer_clear()
+        self.buffer_inform("look.failed.actor")
+        self.actor.send_result(self.buffer_get())

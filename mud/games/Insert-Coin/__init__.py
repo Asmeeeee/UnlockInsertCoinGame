@@ -7,7 +7,7 @@ from mud.actions import (
     OpenWithAction, CloseAction, TypeAction, InventoryAction,
     LightOnAction, LightOffAction, DropAction, DropInAction,
     PushAction, TeleportAction, EnterAction, LeaveAction, OpenWithAction2,
-    ClearAction
+    HintAction
 )
 
 import mud.game
@@ -38,5 +38,5 @@ def make_rules():
         (EnterAction     , r"entrer"),
         (LeaveAction     , r"sortir|partir"),
         (OpenWithAction2 , r"mettre %s(\S+) dans %s(\w+)" % (DETS,DETS)),
-        (ClearAction     , r"vider"),
+        (HintAction      , r"indice|hint"),
     )

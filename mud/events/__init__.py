@@ -4,7 +4,7 @@
 
 from .failedaction import FailedActionEvent
 from .go           import EnterPortalEvent, TraversePortalEvent, LeavePortalEvent, MoveEvent
-from .look         import LookEvent
+from .look         import LookEvent, HintEvent
 from .inspect      import InspectEvent
 from .take         import TakeEvent, TakeEvent2
 from .light        import LightOnEvent, LightOffEvent

@@ -80,6 +80,9 @@ events:
   look:
     actor: |
       Vous etes dans une jungle.<br></p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834870604322177094/Image_Jungle.JPG"> <p>
+  hint:
+    actor: |
+      Regardez les lianes
 ---
 id: intro-jeux-1-000
 type: Location
