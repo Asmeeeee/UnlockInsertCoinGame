@@ -140,6 +140,17 @@ events:
   look:
     actor: |
       Vous dans une caverne  
+---
+id: jungle-2-000
+type: Location
+events:
+  info:
+    actor: "Vous etes revenu dans la jungle."
+  look:
+    actor: |
+      Vous estes dans la même jungle que tout a l heure. 
+parts:
+  - coffre-000
 
 # ============= OBJETS =============
 
@@ -328,7 +339,35 @@ events:
     actor: |
       Votre cybercasque flambant neuf !
       <br> INSERER IMAGE CYBERCASQUE
-
+---
+id: epee-000
+type: Thing
+props:
+  - takable
+name:
+    - epee
+    - arme
+    - lame
+gender: fem
+events:
+  info:
+    actor: "Une epee."
+  look:
+    actor: |
+      Une epee
+      </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783137577959474/Image_Epee.JPG"> <p>
+# ============= CONTAINER ============
+---
+id: coffre-000
+type: Container
+name: coffre
+events:
+  look:
+    actor: |
+      C'est un coffre
+      </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835072745943203840/Image_CoffreFerme.JPG"> <p>
+contains:
+  - epee-000
 # ============= PORTAILS =============
 
 ---
