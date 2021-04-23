@@ -290,7 +290,7 @@ props:
   - takable
 name:
     - pioche
-    - - key-for-borne-verrouille-borne-000
+    - key-for-borne-verrouille-borne-000
 gender: fem
 events:
   info:
