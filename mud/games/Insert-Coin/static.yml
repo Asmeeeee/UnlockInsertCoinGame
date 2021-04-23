@@ -32,6 +32,7 @@ directions:
     next      : next
     play      : play
     exit      : exit
+    "52"      : "52"
     "5938"    : "5938"
   noun_the:
     nord      : le nord

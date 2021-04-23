@@ -118,7 +118,7 @@ events:
     actor: "Vous etes mort"
   look:
     actor: |
-      Vous avez succombé.
+      Vous avez succombé. </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783211111448616/Image_CaverneMort.JPG"> <p>
 ---
 id: caverne-bloque-000
 type: Location
@@ -128,7 +128,15 @@ events:
   look:
     actor: |
       "Vous etes bloqué dans une caverne, un rocher bloque votre passage"
-  
+---
+id: caverne-000
+type: Location
+events:
+  info:
+    actor: "Vous etes dans une caverne"
+  look:
+    actor: |
+      Vous dans une caverne  
 
 # ============= OBJETS =============
 
@@ -523,9 +531,26 @@ exits:
     events:
       enter-portal:
         actor: |
-          D'etranges lumieres jaillissent de la machine et le temps semble s'arreter autour de vous. Vous vous sentez soudainement happés par l'ecran et atterrissez au milieu d'une jungle luxuriante. <br> </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834870604322177094/Image_Jungle.JPG"> <p>Texte jungle!<br>
+          D'etranges lumieres jaillissent de la machine et le temps semble s'arreter autour de vous. Vous vous sentez soudainement happés par l'ecran et atterrissez au milieu d'une jungle luxuriante. <br> </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834870604322177094/Image_Jungle.JPG"> <p>
   - id: jungle-000-sens_interdit
     location: jungle-000
+    direction: sens_interdit
+    events:
+      enter-portal:
+        actor   : "XXX"
+---
+id: portal-jungle-mort-000
+type: Portal
+exits:
+  - id: jungle-000-52
+    location: jungle-000
+    direction: "52"
+    events:
+      enter-portal:
+        actor: |
+          </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835069929714876416/Image_Mort.JPG"> <p><br>La chute a été fatale.
+  - id: caverne-mort-000-sens_interdit
+    location: caverne-mort-000
     direction: sens_interdit
     events:
       enter-portal:
