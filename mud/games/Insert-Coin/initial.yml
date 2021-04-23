@@ -255,6 +255,8 @@ events:
   look:
       actor: |
         Vous etes dans une usine pleine d'echelle et de plateformes, un vrai labyrinthe ! Il faut trouver un moyen de retrouver la princesse.</p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835193144458346546/Image_EnigmeCheminNumero.JPG"> <p>
+
+
 # ============= OBJETS =============
 
 ---
@@ -504,6 +506,7 @@ id: banane-000
 type: Thing
 props:
   - takable
+  - key-for-wolfix-princesse-000
 name:
     - banane
 gender: fem
@@ -531,6 +534,15 @@ events:
   look:
     actor: |
       Le code de triche est <Strong>l1 l2 haut bas gauche droite</Strong>.
+---
+id: princesse-000
+type: Location
+events:
+  info:
+    actor: Royaumme
+  look:
+    actor: |
+      Vous avez enfin délivre la princesse Kim. </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835246401142128680/Image_Princesse.JPG"> <p>
 
 # ============= CONTAINER ============
 ---
@@ -1224,74 +1236,6 @@ exits:
       enter-portal:
         actor   : "XXX"
 ---
-id: portal-caverne-bloque-caverne-000
-type: Portal
-props:
-  - closed
-  - closable
-exits:
-  - id: caverne-bloque-000-nord
-    location: caverne-bloque-000
-    direction: nord
-    name:
-      - rocher
-      - pierre
-    props:
-      - for-enter
-    events:
-      enter-portal:
-        actor     : "Vous vous dirigez vers l'echelle, au fond de la caverne"
-        failed:
-          actor   : &porte001 |
-            Le rocher vous bloque le passage.
-          observer: &porte002 |
-            {{ actor.name }} tente en vain d'ouvrir la porte du
-            département info.
-      leave-portal:
-        actor     : "Vous revenez a l'entree de la caverne."
-        observer  : "{{ actor.name }} sort du département info."
-      open        :
-        - props   : portal:closed
-          actor   : *porte001
-          observer: *porte002
-        - props   : -portal:closed
-          actor   : &porte003 "Le rocher est deja casse, la voie est libre !"
-      open-with   :
-        - props   :
-            - portal:closed
-            - object2:key-for-caverne-bloque-caverne-000
-          effects :
-            - type  : ChangePropEffect
-              modifs:
-                - -portal:closed
-          actor   : |
-            Le rocher se brise sous les coups de votre pioche, liberant ainsi le passage !
-        - props   :
-            - portal:closed
-            - -object2:key-for-caverne-bloque-caverne-000
-          actor   : |
-            Vous tentez vainement de casser le rocher avec {{ object2.noun_the() }}.
-        - props   :
-            - -portal:closed
-          actor   : *porte003
-      close       : &porte004
-        - props   : portal:closed
-          actor   : "Vous fermez la porte du département."
-          observer: "{{ actor.name }} ferme le porte du département info."
-          effects :
-            - type  : ChangePropEffect
-              modifs: =portal-caverne-bloque-caverne-000:closed
-      close-with  : *porte004
-  - id: caverne-caverne-bloque-000
-    location: caverne-000
-    direction: sud
-    gender: fem
-    props:
-      - for-leave
-    events:
-      enter-portal:
-        actor   : "Vous revenez a l'entree de la caverne"
----
 id: portal-wolfix-princesse-000
 type: Portal
 props:
@@ -1352,7 +1296,7 @@ exits:
             - type  : ChangePropEffect
               modifs: =portal-wolfix-princesse-000:closed
       close-with  : *porte004
-  - id: princesse-wolfix-000
+  - id: princesse-000-sud
     location: princesse-000
     direction: sud
     props:

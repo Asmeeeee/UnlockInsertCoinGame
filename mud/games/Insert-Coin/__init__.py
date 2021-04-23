@@ -40,5 +40,5 @@ def make_rules():
         (OpenWithAction2 , r"mettre %s(\S+) dans %s(\w+)" % (DETS,DETS)),
         (HintAction      , r"indice|hint"),
         (GoAction        , r"(?:boire|regarder avec|mettre|enfiler|observer avec) (%s)" % "|".join(DIRS)),
-        (OpenWithAction  , r"(?:casser|poser|detruire|exploser|lacher|deposer) %s(\S+) (?:avec|sous|sur|devant|derriere| %s(\w+)" % (DETS,DETS)),
+        (OpenWithAction  , r"(?:casser|poser|detruire|exploser|lacher|deposer) %s(\S+) (?:avec|sous|sur|devant|derriere) %s(\w+)" % (DETS,DETS)),
     )
