@@ -37,7 +37,7 @@ def make_rules():
         (TeleportAction  , r"tele(?:porter|) (\S+)"),
         (EnterAction     , r"entrer"),
         (LeaveAction     , r"sortir|partir"),
-        (OpenWithAction2 , r"(?:mettre|deposer|inserer|poser|lacher) %s(\S+) (?:dans|sous|sur|devant|derriere) %s(\w+)" % (DETS,DETS)),
+        (OpenWithAction2 , r"(?:mettre|deposer|inserer|poser|lacher|jeter) %s(\S+) (?:dans|sous|sur|devant|derriere) %s(\w+)" % (DETS,DETS)),
         (HintAction      , r"indice|hint"),
         (GoAction        , r"(?:boire|regarder avec|mettre|enfiler|observer avec) (%s)" % "|".join(DIRS)),
         (OpenWithAction  , r"(?:casser|detruire|exploser) %s(\S+) avec %s(\w+)" % (DETS,DETS)),

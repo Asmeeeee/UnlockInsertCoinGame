@@ -59,6 +59,18 @@ directions:
     descendre rocher : bas
     potion    : potion
     cybercasque: cybercasque
+    casque    : cybercasque
+    lunettes  : cybercasque
+    lunette  : cybercasque
+    piocher   : pioche
+    casser avec pioche : pioche
+    detruire avec pioche : pioche
+    casser bloc avec pioche : pioche
+    detruire bloc avec pioche : pioche
+    casser mur avec pioche : pioche
+    detruire mur avec pioche : pioche
+    detruire le mur avec la pioche: pioche
+    casser le mur avec la pioche : pioche
   noun_the:
     nord      : le nord
     est       : l'est

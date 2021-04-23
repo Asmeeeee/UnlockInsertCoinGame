@@ -462,6 +462,25 @@ events:
       Un tonneau explosif, a manipuler avec precaution.
       </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835125655435870228/Image_TNT.JPG"> <p>
 ---
+id: tnt-001
+type: Thing
+props:
+  - takable
+  - key-for-bloc-fissure-evil-sensei-000
+name:
+    - tonneau
+    - explosif
+    - tnt
+    - bidon
+gender: mas
+events:
+  info:
+    actor: "Un tonneau explosif"
+  look:
+    actor: |
+      Un tonneau explosif, a manipuler avec precaution.
+      </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835125655435870228/Image_TNT.JPG"> <p>
+---
 id: pioche-000
 type: Thing
 props:
@@ -527,7 +546,40 @@ events:
       Une epee etincelante.
       </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835128591628763137/Image_Epee.JPG"> <p>
 ---
+id: epee-001
+type: Thing
+props:
+  - takable
+name:
+    - epee
+    - arme
+    - lame
+gender: fem
+events:
+  info:
+    actor: "Une epee"
+  look:
+    actor: |
+      Une epee etincelante.
+      </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835128591628763137/Image_Epee.JPG"> <p>
+---
 id: banane-000
+type: Thing
+props:
+  - takable
+  - key-for-wolfix-princesse-000
+name:
+    - banane
+gender: fem
+events:
+  info:
+    actor: "Une banane"
+  look:
+    actor: |
+      Une banane
+      </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835154800630956072/Image_Banane.JPG"> <p>
+---
+id: banane-001
 type: Thing
 props:
   - takable
@@ -1294,7 +1346,7 @@ exits:
               modifs:
                 - -portal:closed
           actor   : |
-            La machine s'ecroule, Wolfix est vaincu !
+            La machine s'ecroule, Wolfix est vaincu !<br>N'attendez plus, allez au nord delivrer la princesse !
         - props   :
             - portal:closed
             - -object2:key-for-wolfix-princesse-000
@@ -1352,6 +1404,33 @@ exits:
 
   - id: exit-000-sens_interdit
     location: exit-000
+    direction: sens_interdit
+    events:
+      enter-portal:
+        actor   : "XXX"
+---
+id: portal-bloc-fissure-bloc-fissure-pioche-000
+type: Portal
+exits:
+  - id: bloc-fissure-pioche-000
+    location: bloc-fissure-000
+    direction: pioche
+    events:
+      enter-portal:
+        actor: |
+          Votre pioche s'est cassé. Visiblement, le bloc n'est pas si fragile que ca ...
+        effects:
+          - type: ClearEffect
+          - type: TakeEffect2
+            object: tnt-001
+          - type: TakeEffect2
+            object: cybercasque-000
+          - type: TakeEffect2
+            object: epee-001
+          - type: TakeEffect2
+            object: banane-001
+  - id: bloc-fissure-pioche-001
+    location: bloc-fissure-000
     direction: sens_interdit
     events:
       enter-portal:
