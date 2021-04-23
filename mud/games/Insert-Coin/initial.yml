@@ -129,10 +129,10 @@ contains:
   - pioche-000
 events:
   info:
-    actor: "Vous etes bloqué dans une caverne, un rocher bloque votre passage"
+    actor: "caverne."
   look:
     actor: |
-      "Vous etes bloqué dans une caverne, un rocher bloque votre passage"
+      "Vous etes bloqué dans une caverne, un rocher bloque votre passage un rocher bloque votre passage. Derniere celui-ci, se trouve une echelle au nord."
 ---
 id: caverne-000
 type: Location
