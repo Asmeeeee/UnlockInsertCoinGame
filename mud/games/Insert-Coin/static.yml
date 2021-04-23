@@ -1,4 +1,4 @@
-start: regles-000
+start: intro-jeux-1-000
 directions:
   normalized:
     nord      : nord
@@ -52,6 +52,7 @@ directions:
     grimper rocher : haut
     descendre rocher : bas
     potion    : potion
+    cybercasque: cybercasque
   noun_the:
     nord      : le nord
     est       : l'est

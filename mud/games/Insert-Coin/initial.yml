@@ -245,7 +245,7 @@ events:
     actor: Usine
   look:
       actor: |
-        </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835193144458346546/Image_EnigmeCheminNumero.JPG"> <p>
+        </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835193231918366770/Image_EnigmeCheminLaser.jpg"> <p>
 ---
 id: usine-echelle-000
 type: Location
@@ -254,7 +254,7 @@ events:
     actor: Usine
   look:
       actor: |
-        </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835192972496207912/Image_EnigmeCheminLaser.jpg"> <p>
+        Vous etes dans une usine pleine d'echelle et de plateformes, un vrai labyrinthe ! Il faut trouver un moyen de retrouver la princesse.</p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835193144458346546/Image_EnigmeCheminNumero.JPG"> <p>
 # ============= OBJETS =============
 
 ---
@@ -452,6 +452,22 @@ events:
       </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835127958233677844/Image_pioche.JPG"> <p>
 ---
 id: cybercasque-000
+type: Thing
+props:
+  - takable
+name:
+    - cybercasque
+    - casque
+gender: mas
+events:
+  info:
+    actor: "Un cybercasque"
+  look:
+    actor: |
+      Votre vieux casque est devenu un cyber casque ! Sa technologie vous montrera le monde d'une autre maniere ...
+      <br> </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835128155224014913/Image_CyberCasque.JPG"> <p>
+---
+id: cybercasque-001
 type: Thing
 props:
   - takable
@@ -783,13 +799,13 @@ exits:
       enter-portal:
         actor: |
           </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835082327062741042/Image_ExtraLife.JPG"> <p> Vous buvez votre potion !
+        effects:
+          - type: ClearEffect
+          - type: TakeEffect2
+            object: cybercasque-001
       hint:
         actor: |
           Heuresement vous etes dans un jeux video, il faut maintenant trouvez un moyen de recuperer une vie.
-    effect:
-      - type: ClearEffect
-      - type: TakeEffect2
-        object: cybercasque-000
   - id: caverne-bloque-sens_interdit
     location: caverne-bloque-000
     direction: sens_interdit
@@ -1174,7 +1190,24 @@ exits:
       enter-portal:
         actor   : "XXX"
 ---
-id: usine-echelle-2-wolfix000
+id: usine-echelle-usine-echelle-2-000
+type: Portal
+exits:
+  - id: usine-echelle-000-cybercasque
+    location: usine-echelle-000
+    direction: cybercasque
+    events:
+      enter-portal:
+        actor: |
+          Vous enfilez votre cybercasque.
+  - id: usine-echelle-2-usine-echelle-000
+    location: usine-echelle-2-000
+    direction: cybercasque
+    events:
+      enter-portal:
+        actor   : "Vous retirez votre cybercasque."
+---
+id: usine-echelle-2-wolfix-000
 type: Portal
 exits:
   - id: usine-echelle-2-000-2484
