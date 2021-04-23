@@ -71,7 +71,6 @@ events:
 id: jungle-000
 type: Location
 contains: 
-    - potion-000
     - pioche-000
     - tnt-000 
     - ressort-000
@@ -521,7 +520,7 @@ exits:
     events:
       enter-portal:
         actor: |
-          D'etranges lumieres jaillissent de la machine et le temps semble s'arreter autour de vous. Vous vous sentez soudainement happés par l'ecran et atterrissez au milieu d'une jungle luxuriantes. <br> </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834870604322177094/Image_Jungle.JPG"> <p>Texte jungle!<br>
+          D'etranges lumieres jaillissent de la machine et le temps semble s'arreter autour de vous. Vous vous sentez soudainement happés par l'ecran et atterrissez au milieu d'une jungle luxuriante. <br> </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834870604322177094/Image_Jungle.JPG"> <p>Texte jungle!<br>
   - id: jungle-000-sens_interdit
     location: jungle-000
     direction: sens_interdit
