@@ -214,7 +214,16 @@ events:
     actor: Grotte
   look:
       actor: |
-        Vous remarquez une fissure dans le mur de blocs.<br></p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835172912528359444/Image_Fissure.JPG"> <p>
+        Vous etes dans une grotte, au nord se trouve la sortie de la grotte. Devant vous se trouve un mur de blocs. Vous remarquez une fissure dans le mur de blocs.<br></p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835172912528359444/Image_Fissure.JPG"> <p>
+---
+id: evil-sensei-000
+type: Location
+events:
+  info:
+    actor: Evil Sensei
+  look:
+      actor: |
+        Vous etes dans une rue, devant vous le maitre Evil Sensei vous attend, bien determiner a vous empecher de passer.
 # ============= OBJETS =============
 
 ---
@@ -380,10 +389,12 @@ id: tnt-000
 type: Thing
 props:
   - takable
+  - key-for-bloc-fissure-evil-sensei-000
 name:
-    - tnt
-    - explosif
     - tonneau
+    - explosif
+    - tnt
+    - bidon
 gender: mas
 events:
   info:
@@ -750,7 +761,7 @@ exits:
             {{ actor.name }} tente en vain d'ouvrir la porte du
             département info.
       leave-portal:
-        actor     : "Vous revenez a l'entrer de la caverne."
+        actor     : "Vous revenez a l'entree de la caverne."
         observer  : "{{ actor.name }} sort du département info."
       open        :
         - props   : portal:closed
@@ -992,10 +1003,79 @@ exits:
     events:
       enter-portal:
         actor: |
-          Vous etes devant un bloc fissuré
+          Vous vous dirigez vers la sortie de la grotte, mais un mur de blocs vous barre la route !
   - id: bloc-fissure-000-sens interdit
     location: bloc-fissure-000
     direction: sens interdit
     events:
       enter-portal:
         actor   : "XXX"
+---
+id: portal-bloc-fissure-evil-sensei-000
+type: Portal
+props:
+  - closed
+  - closable
+exits:
+  - id: bloc-fissure-000-nord
+    location: bloc-fissure-000
+    direction: nord
+    name:
+      - bloc
+      - mur
+      - blocs
+    props:
+      - for-enter
+    events:
+      enter-portal:
+        actor     : "Vous vous faufilez a travers les decombres jusqu'au niveau suivant."
+        failed:
+          actor   : &porte001 |
+            Le mur de bloc vous barre le passage. Vous remarquez une fissure dans le mur de blocs.<br></p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835172912528359444/Image_Fissure.JPG"> <p>
+          observer: &porte002 |
+            {{ actor.name }} tente en vain d'ouvrir la porte du
+            département info.
+      leave-portal:
+        actor     : "Vous revenez dans la grotte"
+        observer  : "{{ actor.name }} sort du département info."
+      open        :
+        - props   : portal:closed
+          actor   : *porte001
+          observer: *porte002
+        - props   : -portal:closed
+          actor   : &porte003 "Le mur de blocs est deja detruit, la voie est libre !"
+      open-with   :
+        - props   :
+            - portal:closed
+            - object2:key-for-bloc-fissure-evil-sensei-000
+          effects :
+            - type  : ChangePropEffect
+              modifs:
+                - -portal:closed
+          actor   : |
+            Le mur explose ! La sortie de la grotte est maintenant libere
+        - props   :
+            - portal:closed
+            - -object2:key-for-bloc-fissure-evil-sensei-000
+          actor   : |
+            Vous tentez vainement de faire exploser le mur avec {{ object2.noun_the() }}.
+        - props   :
+            - -portal:closed
+          actor   : *porte003
+      close       : &porte004
+        - props   : portal:closed
+          actor   : "Vous fermez la porte du département."
+          observer: "{{ actor.name }} ferme le porte du département info."
+          effects :
+            - type  : ChangePropEffect
+              modifs: =portal-bloc-fissure-evil-sensei-000:closed
+      close-with  : *porte004
+  - id: evil-sensei-bloc-fissure-000
+    location: evil-sensei-000
+    direction: sud
+    gender: fem
+    props:
+      - for-leave
+    events:
+      enter-portal:
+        actor   : "Vous revenez dans la grotte."

@@ -40,5 +40,5 @@ def make_rules():
         (OpenWithAction2 , r"mettre %s(\S+) dans %s(\w+)" % (DETS,DETS)),
         (HintAction      , r"indice|hint"),
         (GoAction        , r"boire (%s)" % "|".join(DIRS)),
-        (OpenWithAction  , r"casser %s(\S+) avec %s(\w+)" % (DETS,DETS)),
+        (OpenWithAction  , r"(?:casser|detruire|exploser) %s(\S+) avec %s(\w+)" % (DETS,DETS)),
     )
