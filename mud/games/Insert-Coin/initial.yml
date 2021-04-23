@@ -125,6 +125,8 @@ events:
 ---
 id: caverne-bloque-000
 type: Location
+contains:
+  - pioche-000
 events:
   info:
     actor: "Vous etes bloqué dans une caverne, un rocher bloque votre passage"
