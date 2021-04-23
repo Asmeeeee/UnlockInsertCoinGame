@@ -31,8 +31,8 @@ def make_rules():
         (InventoryAction , r"(?:inventaire|inv|i)$"),
         (LightOnAction   , r"allumer %s(\S+)" % DETS),
         (LightOffAction  , r"[eé]teindre %s(\S+)" % DETS),
-        (DropAction      , r"(?:poser|laisser) %s(\S+)" % DETS),
-        (DropInAction    , r"(?:poser|laisser) %s(\S+) (?:dans |sur |)%s(\S+)" % (DETS,DETS)),
+        (DropAction      , r"laisser %s(\S+)" % DETS),
+        (DropInAction    , r"laisser %s(\S+) (?:dans |sur |)%s(\S+)" % (DETS,DETS)),
         (PushAction      , r"(?:appuyer|pousser|presser)(?: sur|) %s(\S+)" % DETS),
         (TeleportAction  , r"tele(?:porter|) (\S+)"),
         (EnterAction     , r"entrer"),
@@ -40,5 +40,5 @@ def make_rules():
         (OpenWithAction2 , r"mettre %s(\S+) dans %s(\w+)" % (DETS,DETS)),
         (HintAction      , r"indice|hint"),
         (GoAction        , r"(?:boire|regarder avec|mettre|enfiler|observer avec) (%s)" % "|".join(DIRS)),
-        (OpenWithAction  , r"(?:casser|detruire|exploser) %s(\S+) avec %s(\w+)" % (DETS,DETS)),
+        (OpenWithAction  , r"(?:casser|poser|detruire|exploser|lacher|deposer) %s(\S+) (?:avec|sous|sur|devant|derriere| %s(\w+)" % (DETS,DETS)),
     )
