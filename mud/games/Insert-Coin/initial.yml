@@ -118,7 +118,7 @@ events:
     actor: "Vous etes mort"
   look:
     actor: |
-      Vous avez succombé. </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783211111448616/Image_CaverneMort.JPG"> <p>
+      Vous avez succombé. </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835071455779749898/Image_CaverneMort.JPG"> <p>
 ---
 id: caverne-bloque-000
 type: Location
