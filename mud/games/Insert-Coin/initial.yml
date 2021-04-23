@@ -193,6 +193,44 @@ events:
         - type  : ChangePropEffect
           modifs: -object:light-on
 ---
+id: lampe-001
+type: Thing
+props:
+  - lightable
+  - takable
+names   :
+  - lampe
+  - casque
+  - lampe-frontale
+gender: fem
+events:
+  info:
+    actor:
+      - props: =lampe-000:light-on
+        data : "Une lampe frontale allumee"
+      - data : "Un lampe frontale eteinte"
+  look:
+    actor:
+      - props: object:light-on
+        data : "Le vieux casque a lampe frontale de votre tonton Stephane. La lampe est allumee
+              </p> <img src=\"https://cdn.discordapp.com/attachments/498184586736435202/834433662766415922/Image_LampeFrontale.JPG\"> <p>"
+      - data : "Le vieux casque a lampe frontale de votre tonton Stephane. La lampe est eteinte
+              </p> <img src=\"https://cdn.discordapp.com/attachments/498184586736435202/834433662766415922/Image_LampeFrontale.JPG\"> <p>"
+  light-on:
+    - props : object:light-on
+      actor : "La lampe est déjà allumée."
+    - actor : "Vous allumez votre lampe frontale."
+      effects:
+        - type  : ChangePropEffect
+          modifs: object:light-on
+  light-off:
+    - props : -object:light-on
+      actor : "La lampe est déjà éteinte."
+    - actor : "Vous éteignez votre lampe frontale."
+      effects:
+        - type  : ChangePropEffect
+          modifs: -object:light-on
+---
 id: piece-000
 type: Thing
 props:
@@ -474,9 +512,12 @@ exits:
             - portal:closed
             - object2:key-for-borne-verrouille-borne-000
           effects :
-            type  : ChangePropEffect
-            modifs:
-              - -portal:closed
+            - type  : ChangePropEffect
+              modifs:
+                - -portal:closed
+            - type: ClearEffect
+            - type: TakeEffect2
+              object: lampe-001
           actor   : |
             La machine semble toujours fonctionner ! Une musique commence a sortir de la borne d'arcade.
         - props   :
