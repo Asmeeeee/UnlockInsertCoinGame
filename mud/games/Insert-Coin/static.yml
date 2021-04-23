@@ -16,6 +16,11 @@ directions:
     nord-ouest: nord-ouest
     "no"      : nord-ouest
     sudest    : sud-est
+    attaque attaque : attaque2
+    attaque attaque attaque : attaque3
+    epee : attaque
+    epee epee : attaque2
+    epee epee epee : attaque3
     sud-est   : sud-est
     se        : sud-est
     sudouest  : sud-ouest
@@ -36,6 +41,8 @@ directions:
     "5938"    : "5938"
     monter echelle   : haut
     descendre echelle: bas
+    grimper rocher : haut
+    descendre rocher : bas
     potion    : potion
   noun_the:
     nord      : le nord
