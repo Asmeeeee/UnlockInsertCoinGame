@@ -75,8 +75,7 @@ id: jungle-000
 type: Location
 contains: 
     - pioche-000
-    - tnt-000 
-    - ressort-000
+    - tnt-000
 events:
   info:
     actor: "Jungle"
@@ -330,23 +329,7 @@ events:
   look:
     actor: |
       Un bidon de tnt.
-      </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783155973652590/Image_TNT.JPG"> <p>
----
-id: ressort-000
-type: Thing
-props:
-  - takable
-name:
-    - ressort
-    - portatif
-gender: mas
-events:
-  info:
-    actor: "Un ressort portatif."
-  look:
-    actor: |
-      Un ressort portatif.
-      </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783155973652590/Image_TNT.JPG"> <p>
+      </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835125655435870228/Image_TNT.JPG"> <p>
 ---
 id: pioche-000
 type: Thing
@@ -396,6 +379,7 @@ events:
     actor: |
       Une epee
       </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783137577959474/Image_Epee.JPG"> <p>
+
 # ============= CONTAINER ============
 ---
 id: coffre-000
@@ -729,16 +713,16 @@ exits:
 id: portal-caverne-jungle-2-000
 type: Portal
 exits:
-  - id: caverne-000-nord
+  - id: caverne-000-haut
     location: caverne-000
-    direction: nord
+    direction: haut
     events:
       enter-portal:
         actor: |
           Vous montez l echelle
-  - id: jungle-2-000-sud
+  - id: jungle-2-000-bas
     location: jungle-2-000
-    direction: sud
+    direction: bas
     events:
       enter-portal:
         actor   : "Vous descendez l echelle"

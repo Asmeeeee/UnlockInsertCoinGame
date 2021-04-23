@@ -34,8 +34,8 @@ directions:
     exit      : exit
     "52"      : "52"
     "5938"    : "5938"
-    monter echelle   : nord
-    descendre echelle: sud
+    monter echelle   : haut
+    descendre echelle: bas
     potion    : potion
   noun_the:
     nord      : le nord
