@@ -67,6 +67,9 @@ events:
   look:
     actor: |
       Affiche sur l'ecran, vous constatez les performances impressionnantes des precedents joueurs.<br> </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834782988948340766/Image_EnigmeHighScores.JPG"> <p>
+  hint:
+    actor: |
+      Cherchez un <Strong>CODE</Strong> ...
 ---
 id: jungle-000
 type: Location
