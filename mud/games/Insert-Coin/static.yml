@@ -17,6 +17,7 @@ directions:
     "no"      : nord-ouest
     sudest    : sud-est
     attaque   : attaque1
+    "35"      : "35"
     attaque attaque : attaque2
     attaque attaque attaque : attaque3
     attaquer   : attaque1
@@ -36,6 +37,7 @@ directions:
     b         : bas
     monter    : haut
     grimper   : haut
+    descendre : bas
     start     : start
     azertyqsd : sens_interdit
     next      : next

@@ -140,7 +140,7 @@ events:
     actor: "Caverne"
   look:
     actor: |
-      Vous etes dans une caverne, devant vous au nord, se trouve l'echelle.
+      Vous etes dans une caverne, devant vous se trouve l'echelle.
 ---
 id: jungle-2-000
 type: Location
@@ -182,12 +182,32 @@ events:
 ---
 id: sommet-0vies-000
 type: Location
+contains: 
+    - banane-000
 events:
   info:
     actor: Rocher
   look:
       actor: |
-        Kong est terrassé, le passage est sans danger.
+        Kong est terrasse, le passage est sans danger. Derriere lui, a l est, se trouve l entree de la grotte
+---
+id: grotte-000
+type: Location
+events:
+  info:
+    actor: Grotte
+  look:
+      actor: |
+       Vous etes coince!! trouvez un moyen de passer.<br></p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835148181833908275/Image_TunnelBlocs.JPG"> <p>
+---
+id: bloc-fissure-000
+type: Location
+events:
+  info:
+    actor: Grotte
+  look:
+      actor: |
+       Le bloc est fragile.<br></p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783147576000522/Image_Fissure.JPG"> <p>
 # ============= OBJETS =============
 
 ---
@@ -414,6 +434,21 @@ events:
     actor: |
       Une epee etincelante.
       </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835128591628763137/Image_Epee.JPG"> <p>
+---
+id: banane-000
+type: Thing
+props:
+  - takable
+name:
+    - banane
+gender: fem
+events:
+  info:
+    actor: "Une banane"
+  look:
+    actor: |
+      Une banane
+      </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835154800630956072/Image_Banane.JPG"> <p>
 
 # ============= CONTAINER ============
 ---
@@ -916,6 +951,40 @@ exits:
   - id: sommet-0vies-000-sens_interdit4
     location: sommet-1vies-000
     direction: sens interdit 
+    events:
+      enter-portal:
+        actor   : "XXX"
+---
+id: portal-sommet-0vies-grotte-000
+type: Portal
+exits:
+  - id: sommet-0vies-000-est
+    location: sommet-0vies-000
+    direction: est
+    events:
+      enter-portal:
+        actor: |
+          Vous etes dans une grotte.
+  - id: grotte-000-ouest
+    location: grotte-000
+    direction: ouest
+    events:
+      enter-portal:
+        actor   : "XXX"
+---
+id: portal-grotte-bloc-fissure-000
+type: Portal
+exits:
+  - id: grotte-000-35
+    location: grotte-000
+    direction: "35"
+    events:
+      enter-portal:
+        actor: |
+          Vous etes devant un bloc fissuré
+  - id: bloc-fissure-000-sens interdit
+    location: bloc-fissure-000
+    direction: sens interdit
     events:
       enter-portal:
         actor   : "XXX"
