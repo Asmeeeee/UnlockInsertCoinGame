@@ -117,7 +117,7 @@ id: caverne-mort-000
 type: Location
 events:
   info:
-    actor: "Vous etes mort"
+    actor: "Mort"
   look:
     actor: |
       Vous avez succombé. </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835071455779749898/Image_CaverneMort.JPG"> <p>
@@ -131,7 +131,7 @@ events:
     actor: "Caverne"
   look:
     actor: |
-      Vous etes bloqué dans une caverne, un rocher bloque votre passage. Derniere celui-ci, se trouve une echelle au nord.
+      Vous etes dans une caverne, au nord vous apercevez une echelle.
 ---
 id: caverne-000
 type: Location
@@ -140,16 +140,16 @@ events:
     actor: "Caverne"
   look:
     actor: |
-      Vous etes dans une caverne, au nord il y a une echelle.
+      Vous etes dans une caverne, devant vous au nord, se trouve l'echelle.
 ---
 id: jungle-2-000
 type: Location
 events:
   info:
-    actor: "Vous etes revenu dans la jungle."
+    actor: "Jungle"
   look:
     actor: |
-      Vous etes dans la même jungle que tout a l heure. <br></p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834870604322177094/Image_Jungle.JPG"> <p>
+      Vous etes dans une jungle. Devant vous, au sommet de son rocher, se trouve le singe Kong. A cote de vous il y a coffre entrouvert.
 parts:
   - coffre-000
 
@@ -321,14 +321,14 @@ props:
 name:
     - tnt
     - explosif
-    - bidon
+    - tonneau
 gender: mas
 events:
   info:
-    actor: "Un bidon de tnt."
+    actor: "Un tonneau"
   look:
     actor: |
-      Un bidon de tnt.
+      Un tonneau explosif, a manipuler avec precaution.
       </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835125655435870228/Image_TNT.JPG"> <p>
 ---
 id: pioche-000
@@ -345,7 +345,7 @@ events:
   look:
     actor: |
       Une pioche.
-      </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783155973652590/Image_TNT.JPG"> <p>
+      </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835127958233677844/Image_pioche.JPG"> <p>
 ---
 id: cybercasque-000
 type: Thing
@@ -357,11 +357,11 @@ name:
 gender: mas
 events:
   info:
-    actor: "Un cybercasque."
+    actor: "Un cybercasque"
   look:
     actor: |
-      Votre cybercasque flambant neuf !
-      <br> INSERER IMAGE CYBERCASQUE
+      Votre vieux casque est devenu un cyber casque ! Sa technologie vous montrera le monde d'une autre maniere ...
+      <br> </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835128155224014913/Image_CyberCasque.JPG"> <p>
 ---
 id: epee-000
 type: Thing
@@ -374,11 +374,11 @@ name:
 gender: fem
 events:
   info:
-    actor: "Une epee."
+    actor: "Une epee"
   look:
     actor: |
-      Une epee
-      </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783137577959474/Image_Epee.JPG"> <p>
+      Une epee etincelante.
+      </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835128591628763137/Image_Epee.JPG"> <p>
 
 # ============= CONTAINER ============
 ---
@@ -388,8 +388,8 @@ name: coffre
 events:
   look:
     actor: |
-      C'est un coffre
-      </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835072745943203840/Image_CoffreFerme.JPG"> <p>
+      Un coffre entrouvert.
+      </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835128776299773952/Image_CoffreFerme.JPG"> <p>
 contains:
   - epee-000
 # ============= PORTAILS =============
@@ -617,7 +617,10 @@ exits:
     events:
       enter-portal:
         actor: |
-          </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835069929714876416/Image_Mort.JPG"> <p><br>La chute a été fatale.
+          </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835069929714876416/Image_Mort.JPG"> <p><br>Aaaaaaaaah !<br>Vous tombez dans ce trou et faites une chute mortelle !
+      hint:
+        actor: |
+          Vous etes dans un jeux video, il faut maintenant trouver un moyen de recuperer une vie. Cherchez un <Strong> CODE </Strong> ...
   - id: caverne-mort-000-sens_interdit
     location: caverne-mort-000
     direction: sens_interdit
