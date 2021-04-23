@@ -150,7 +150,7 @@ events:
     actor: "Vous etes revenu dans la jungle."
   look:
     actor: |
-      Vous etes dans la même jungle que tout a l heure. 
+      Vous etes dans la même jungle que tout a l heure. <br></p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834870604322177094/Image_Jungle.JPG"> <p>
 parts:
   - coffre-000
 
@@ -725,3 +725,20 @@ exits:
     events:
       enter-portal:
         actor   : "Vous revenez a l'entree de la caverne"
+---
+id: portal-caverne-jungle-2-000
+type: Portal
+exits:
+  - id: caverne-000-nord
+    location: caverne-000
+    direction: nord
+    events:
+      enter-portal:
+        actor: |
+          Vous montez l echelle
+  - id: jungle-2-000-sud
+    location: jungle-2-000
+    direction: sud
+    events:
+      enter-portal:
+        actor   : "Vous descendez l echelle"
