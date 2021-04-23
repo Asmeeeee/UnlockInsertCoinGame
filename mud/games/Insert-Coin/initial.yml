@@ -610,7 +610,12 @@ events:
     actor: "Un cheatcode."
   look:
     actor: |
-      Le code de triche est <Strong>l1 l2 haut bas gauche droite</Strong>.
+      <br><Strong>L</Strong>'homme est <Strong>un</Strong> loup pour <Strong>l</Strong>'homme, et ce <Strong>de</Strong>puis le debut. <Strong>Au</Strong> commencement, il etait en <Strong>bas</Strong> de l'echelle. Aujourd'hui, il joue a la pi<Strong>goche</Strong>, sans scurpule. Il s'est mala<Strong>droite</Strong>ment retrouve dans une situation bien moins a son avantage ...
+      <br> <i> - Zola </i>
+  hint:
+    actor: |
+      Prononcez les a haute voix ...
+
 # ============= CONTAINER ============
 ---
 id: coffre-000

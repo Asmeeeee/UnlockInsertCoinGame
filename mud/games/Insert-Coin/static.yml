@@ -53,6 +53,9 @@ directions:
     "5938"    : "5938"
     "2484"    : "2484"
     l1 l2 haut bas gauche droite   : azerty
+    l1l2hautbasgauchedroite : azerty
+    lunldeuxhautbasgauchedroite: azerty
+    l un l deux haut bas gauche droite: azerty
     monter echelle   : haut
     descendre echelle: bas
     grimper rocher : haut
