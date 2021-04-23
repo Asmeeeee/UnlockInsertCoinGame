@@ -34,6 +34,7 @@ directions:
     exit      : exit
     "52"      : "52"
     "5938"    : "5938"
+    potion    : potion
   noun_the:
     nord      : le nord
     est       : l'est

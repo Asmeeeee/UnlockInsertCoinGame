@@ -39,4 +39,5 @@ def make_rules():
         (LeaveAction     , r"sortir|partir"),
         (OpenWithAction2 , r"mettre %s(\S+) dans %s(\w+)" % (DETS,DETS)),
         (HintAction      , r"indice|hint"),
+        (GoAction        , r"boire (%s)" % "|".join(DIRS)),
     )

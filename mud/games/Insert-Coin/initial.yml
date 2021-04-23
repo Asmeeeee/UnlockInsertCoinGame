@@ -139,7 +139,7 @@ events:
     actor: "Vous etes dans une caverne"
   look:
     actor: |
-      Vous dans une caverne  
+      Vous dans une caverne, au nord il y a une echelle
 ---
 id: jungle-2-000
 type: Location
@@ -634,6 +634,23 @@ exits:
           </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835069929714876416/Image_Mort.JPG"> <p><br>La chute a été fatale.
   - id: caverne-mort-000-sens_interdit
     location: caverne-mort-000
+    direction: sens_interdit
+    events:
+      enter-portal:
+        actor   : "XXX"
+---
+id: portal-caverne-mort-caverne-bloque-000
+type: Portal
+exits:
+  - id: caverne-mort-potion
+    location: caverne-mort-000
+    direction: potion
+    events:
+      enter-portal:
+        actor: |
+          </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835082327062741042/Image_ExtraLife.JPG"> <p> Vous buvez votre potion !
+  - id: caverne-bloque-sens_interdit
+    location: caverne-bloque-000
     direction: sens_interdit
     events:
       enter-portal:
