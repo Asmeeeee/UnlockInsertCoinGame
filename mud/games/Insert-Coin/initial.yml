@@ -73,8 +73,7 @@ events:
 ---
 id: jungle-000
 type: Location
-contains: 
-    - pioche-000
+contains:
     - tnt-000
 events:
   info:
@@ -121,6 +120,9 @@ events:
   look:
     actor: |
       Vous avez succombé. </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835071455779749898/Image_CaverneMort.JPG"> <p>
+  hint:
+    actor: |
+      Vous etes dans un jeux video, il faut maintenant trouver un moyen de recuperer une vie.
 ---
 id: caverne-bloque-000
 type: Location
@@ -144,6 +146,8 @@ events:
 ---
 id: jungle-2-000
 type: Location
+contains:
+  - tnt-000
 events:
   info:
     actor: "Jungle"
@@ -199,6 +203,9 @@ events:
   look:
       actor: |
        Vous etes coince!! trouvez un moyen de passer.<br></p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835148181833908275/Image_TunnelBlocs.JPG"> <p>
+  hint:
+    actor: |
+      Projettez vous dans le temps.
 ---
 id: bloc-fissure-000
 type: Location
@@ -207,7 +214,7 @@ events:
     actor: Grotte
   look:
       actor: |
-       Le bloc est fragile.<br></p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834783147576000522/Image_Fissure.JPG"> <p>
+        Vous remarquez une fissure dans le mur de blocs.<br></p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835172912528359444/Image_Fissure.JPG"> <p>
 # ============= OBJETS =============
 
 ---
@@ -380,7 +387,7 @@ name:
 gender: mas
 events:
   info:
-    actor: "Un tonneau"
+    actor: "Un tonneau explosif"
   look:
     actor: |
       Un tonneau explosif, a manipuler avec precaution.
@@ -670,7 +677,7 @@ exits:
     events:
       enter-portal:
         actor: |
-          D'etranges lumieres jaillissent de la machine et le temps semble s'arreter autour de vous. Vous vous sentez soudainement happés par l'ecran et atterrissez au milieu d'une jungle luxuriante. <br> </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834870604322177094/Image_Jungle.JPG"> <p>
+          D'etranges lumieres jaillissent de la machine et le temps semble s'arreter autour de vous. Vous vous sentez soudainement happés par l'ecran et atterrissez au milieu d'une jungle luxuriante. <br>
   - id: jungle-000-sens_interdit
     location: jungle-000
     direction: sens_interdit
@@ -688,9 +695,6 @@ exits:
       enter-portal:
         actor: |
           </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835069929714876416/Image_Mort.JPG"> <p><br>Aaaaaaaaah !<br>Vous tombez dans ce trou et faites une chute mortelle !
-      hint:
-        actor: |
-          Vous etes dans un jeux video, il faut maintenant trouver un moyen de recuperer une vie. Cherchez un <Strong> CODE </Strong> ...
   - id: caverne-mort-000-sens_interdit
     location: caverne-mort-000
     direction: sens_interdit
@@ -708,6 +712,13 @@ exits:
       enter-portal:
         actor: |
           </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835082327062741042/Image_ExtraLife.JPG"> <p> Vous buvez votre potion !
+      hint:
+        actor: |
+          Heuresement vous etes dans un jeux video, il faut maintenant trouvez un moyen de recuperer une vie.
+    effect:
+      - type: ClearEffect
+      - type: TakeEffect2
+        object: cybercasque-000
   - id: caverne-bloque-sens_interdit
     location: caverne-bloque-000
     direction: sens_interdit
