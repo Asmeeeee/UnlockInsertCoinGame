@@ -223,7 +223,38 @@ events:
     actor: Evil Sensei
   look:
       actor: |
-        Vous etes dans une rue, devant vous le maitre Evil Sensei vous attend, bien determiner a vous empecher de passer.
+        Vous etes dans une rue, devant vous le maitre Evil Sensei vous attend, bien determiner a vous empecher de passer. Sur votre gauche, se trouve une vitrine, elle peut contenir quelque chose d'interessant.
+        <br></p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835196674095579186/Image_EvilSensei.JPG"> <p>
+parts:
+    - vitrine-000
+        
+---
+id: wolfix-000
+type: Location
+events:
+  info:
+    actor: Wolfix
+  look:
+      actor: |
+         Wolfix vous barre la route.</p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835169350288801802/Image_RobotWolfix.JPG"> <p>
+---
+id: usine-echelle-2-000
+type: Location
+events:
+  info:
+    actor: Usine
+  look:
+      actor: |
+        </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835193144458346546/Image_EnigmeCheminNumero.JPG"> <p>
+---
+id: usine-echelle-000
+type: Location
+events:
+  info:
+    actor: Usine
+  look:
+      actor: |
+        </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835192972496207912/Image_EnigmeCheminLaser.jpg"> <p>
 # ============= OBJETS =============
 
 ---
@@ -467,6 +498,23 @@ events:
     actor: |
       Une banane
       </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835154800630956072/Image_Banane.JPG"> <p>
+---
+id: cheatcode-000
+type: Thing
+props:
+  - takable
+name:
+    - cheatcode
+    - triche
+    - code
+    - cheat
+gender: mas
+events:
+  info:
+    actor: "Un cheatcode."
+  look:
+    actor: |
+      Le code de triche est <Strong>l1 l2 haut bas gauche droite</Strong>.
 
 # ============= CONTAINER ============
 ---
@@ -480,6 +528,18 @@ events:
       </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835128776299773952/Image_CoffreFerme.JPG"> <p>
 contains:
   - epee-000
+---
+id: vitrine-000
+type: Container
+name: 
+    - vitrine
+    - vitre
+events:
+  look:
+    actor: |
+      Une vitrine ou un cheatcode est ecrit.
+contains:
+  - cheatcode-000
 # ============= PORTAILS =============
 
 ---
@@ -1079,3 +1139,54 @@ exits:
     events:
       enter-portal:
         actor   : "Vous revenez dans la grotte."
+---
+id: portal-evil-sensei-evil-sensei-000
+type: Portal
+exits:
+  - id: evil-sensei-000-attaque1
+    location: evil-sensei-000
+    direction: attaque1
+    events:
+      enter-portal:
+        actor: |
+          Cela ne marche pas, il est trop puissant.
+  - id: evil-sensei-000-sens_interdit
+    location: evil-sensei-000
+    direction: sens_interdit
+    events:
+      enter-portal:
+        actor   : "XXX"
+---
+id: evil-sensei-usine-echelle-000
+type: Portal
+exits:
+  - id: evil-sensei-000-azerty
+    location: evil-sensei-000
+    direction: azerty
+    events:
+      enter-portal:
+        actor: |
+          Vous avez vaincu evil sensei.
+  - id: usine-echelle-000-sens_interdit
+    location: usine-echelle-000
+    direction: sens_interdit
+    events:
+      enter-portal:
+        actor   : "XXX"
+---
+id: usine-echelle-2-wolfix000
+type: Portal
+exits:
+  - id: usine-echelle-2-000-2484
+    location: usine-echelle-2-000
+    direction: "2484"
+    events:
+      enter-portal:
+        actor: |
+          Wolfix vous barre la route.
+  - id: wolfix-000-sens_interdit
+    location: wolfix-000
+    direction: sens_interdit
+    events:
+      enter-portal:
+        actor   : "XXX"

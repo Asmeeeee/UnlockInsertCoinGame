@@ -45,6 +45,8 @@ directions:
     exit      : exit
     "52"      : "52"
     "5938"    : "5938"
+    "2484"    : "2484"
+    l1 l2 haut bas gauche droite   : azerty
     monter echelle   : haut
     descendre echelle: bas
     grimper rocher : haut
