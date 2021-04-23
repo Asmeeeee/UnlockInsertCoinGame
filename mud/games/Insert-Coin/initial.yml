@@ -534,16 +534,6 @@ events:
   look:
     actor: |
       Le code de triche est <Strong>l1 l2 haut bas gauche droite</Strong>.
----
-id: princesse-000
-type: Location
-events:
-  info:
-    actor: Royaumme
-  look:
-    actor: |
-      Vous avez enfin délivre la princesse Kim. </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835246401142128680/Image_Princesse.JPG"> <p>
-
 # ============= CONTAINER ============
 ---
 id: coffre-000
