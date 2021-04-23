@@ -117,6 +117,16 @@ events:
   look:
     actor: |
       Vous avez succombé.
+---
+id: caverne-bloque-000
+type: Location
+events:
+  info:
+    actor: "Vous etes bloqué dans une caverne, un rocher bloque votre passage"
+  look:
+    actor: |
+      "Vous etes bloqué dans une caverne, un rocher bloque votre passage"
+  
 
 # ============= OBJETS =============
 
@@ -280,6 +290,7 @@ props:
   - takable
 name:
     - pioche
+    - - key-for-borne-verrouille-borne-000
 gender: fem
 events:
   info:
@@ -510,7 +521,8 @@ exits:
     events:
       enter-portal:
         actor: |
-          D'etranges lumieres jaillissent de la machine et le temps <br> </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834870604322177094/Image_Jungle.JPG"> <p>Texte jungle!<br>
+          D'etranges lumieres jaillissent de la machine et le temps semble s'arreter autour de vous. Vous vous sentez soudainement happés par l'ecran et atterrissez au milieu d'une jungle luxuriantes. <br> </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834870604322177094/Image_Jungle.JPG"> <p>Texte jungle!<br>
+          </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834870604322177094/Image_Jungle.JPG">
   - id: jungle-000-sens_interdit
     location: jungle-000
     direction: sens_interdit
