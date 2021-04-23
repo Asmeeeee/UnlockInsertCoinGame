@@ -55,7 +55,7 @@ events:
     actor: "Est du grenier"
   look:
     actor: |
-      Vous etes a l'est du grenier. C'est la partie la plus eclairee de ce dernier.'
+      Vous etes a l'est du grenier. C'est la partie la plus eclairee de ce dernier.
 ---
 id: borne-deverrouille-000
 type: Location
@@ -233,7 +233,7 @@ id: wolfix-000
 type: Location
 events:
   info:
-    actor: Wolfix
+    actor: "Wolfix"
   look:
       actor: |
          Wolfix vous barre la route.</p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835169350288801802/Image_RobotWolfix.JPG"> <p>
@@ -255,7 +255,15 @@ events:
   look:
       actor: |
         Vous etes dans une usine pleine d'echelle et de plateformes, un vrai labyrinthe ! Il faut trouver un moyen de retrouver la princesse.</p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835193144458346546/Image_EnigmeCheminNumero.JPG"> <p>
-
+---
+id: princesse-000
+type: Location
+events:
+  info:
+    actor: "Royaumme"
+  look:
+    actor: |
+      Vous avez enfin délivre la princesse Kim. </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835246401142128680/Image_Princesse.JPG"> <p>
 
 # ============= OBJETS =============
 
@@ -534,15 +542,7 @@ events:
   look:
     actor: |
       Le code de triche est <Strong>l1 l2 haut bas gauche droite</Strong>.
----
-id: princesse-000
-type: Location
-events:
-  info:
-    actor: Royaumme
-  look:
-    actor: |
-      Vous avez enfin délivre la princesse Kim. </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835246401142128680/Image_Princesse.JPG"> <p>
+
 
 # ============= CONTAINER ============
 ---
@@ -1262,7 +1262,7 @@ exits:
             {{ actor.name }} tente en vain d'ouvrir la porte du
             département info.
       leave-portal:
-        actor     : "Vous revenez a l'entre de l'arene"
+        actor     : "Vous revenez a l'entree de l'arene"
         observer  : "{{ actor.name }} sort du département info."
       open        :
         - props   : portal:closed
@@ -1299,8 +1299,9 @@ exits:
   - id: princesse-000-sud
     location: princesse-000
     direction: sud
+    gender: fem
     props:
       - for-leave
     events:
       enter-portal:
-        actor   : "Vous revenez dans l'arene."
+        actor   : "Vous revenez dans l'arene"
