@@ -61,6 +61,9 @@ directions:
     grimper rocher : haut
     descendre rocher : bas
     potion    : potion
+    la potion  : potion
+    potion de vie: potion
+    la potion de vie : potion
     cybercasque: cybercasque
     casque    : cybercasque
     lunettes  : cybercasque

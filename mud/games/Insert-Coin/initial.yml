@@ -5,7 +5,15 @@ id: regles-000
 type: Location
 events:
   info:
-    actor: "</p> <img src=\"https://cdn.discordapp.com/attachments/498184586736435202/834693589681831977/Image_InsertCoin.JPG\"> <p>REGLES DU JEUX  ...<br>            <strong> START </strong>"
+    actor: "</p> <img src=\"https://cdn.discordapp.com/attachments/498184586736435202/834693589681831977/Image_InsertCoin.JPG\"> <p>Bienvenue dans Insert Coin !
+      <br>Voici quelques explications sur le fonctionnement du jeu :
+      <br>Insert Coin fonctionne avec des commandes, a ecrire dans la barre de commande situee en bas de cette page. A vous de les trouver ! Voici quelques exemples d'actions que vous pouvez faire avec ces commandes: regarder, regarder un objet, aller dans une direction, prendre un objet, mettre X dans X, ouvrir X avec X ... 
+      <br>Vous avez un inventaire accessible avec la commande \"inventaire\" ou \"i\".
+      <br>Le jeux comporte des enigmes, dont les solutions se materialisent par des codes/phrases cachees a taper dans la barre de commande.
+      <br>Pour la plupart des enigmes, une commande \"indice\" est disponible, pour vous aider a avancer. Bien evidemment, cette commande est a utiliser uniquement si vous bloquez.
+      <br>Certains mots/elements sont en gras, ils vous aident a trouver la commande a taper.
+      <br>Fiez-vous a votre intuition et faites preuve d'observation ... Bonne chance !
+      <br>            <strong> START </strong>"
   look:
     actor: |
       Rien a voir de plus ici
@@ -29,7 +37,7 @@ events:
     actor: "Grenier"
   look:
     actor: |
-      Vous etes dans le grenier de la maison. A l'est, vous apercevez la borne d'arcade. Au fond a l'ouest, il fais trop sombre et vous n'y voyez rien. Accroche sur le mur, vous remarquez le vieux casque a lampe frontale de votre tonton Stephane.
+      Vous etes dans le grenier de la maison. A l'est, vous apercevez la borne d'arcade. Au fond a l'ouest, il fais trop sombre et vous n'y voyez rien. Devant vous sur une boite en carton, vous trouvez un reste de jus de myrtille, qui doit etre la depuis un moment. A votre gauche, accroche sur le mur, vous remarquez le vieux casque a lampe frontale de votre tonton Stephane.
 ---
 id: coin-000
 type: Location
@@ -42,7 +50,7 @@ events:
     actor: "Ouest du grenier"
   look:
     actor: |
-      Vous êtes au bout du grenier, vous entendez la pluie qui frappe la toiture.
+      Vous etes au bout du grenier, vous entendez la pluie qui frappe la toiture.
       Grace a votre lampe frontale vous apercevez une piece doree au sol.
       </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834763062871457822/Image_GrenierSombre.JPG">
 ---
@@ -83,7 +91,7 @@ events:
       Vous etes dans une jungle.<br></p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834870604322177094/Image_Jungle.JPG"> <p>
   hint:
     actor: |
-      Regardez les lianes
+      Les lianes devant vous sont drolement emmele ...
 ---
 id: intro-jeux-1-000
 type: Location
@@ -119,7 +127,7 @@ events:
     actor: "Mort"
   look:
     actor: |
-      Vous avez succombé. </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835071455779749898/Image_CaverneMort.JPG"> <p>
+      Vous avez succombe. </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835071455779749898/Image_CaverneMort.JPG"> <p>
   hint:
     actor: |
       Vous etes dans un jeux video, il faut maintenant trouver un moyen de recuperer une vie.
@@ -165,6 +173,9 @@ events:
   look:
     actor: |
       Vous vous trouvez au sommet du rocher.<br> Malgre vos demandes polies, Kong le gorille sauvage ne bougera pas.</p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835150231569039401/Image_Kong3Vies.JPG"> <p>
+  hint:
+    actor: |
+      Vous n'avez pas le temps de taper une nouvelle commande que Kong a deja regenere sa sante. Il a 3 vies, et un coup d'epee lui en enleve 1. Triplez votre attaque !
 ---
 id: sommet-2vies-000
 type: Location
@@ -225,6 +236,9 @@ events:
       actor: |
         Vous etes dans une rue, devant vous le maitre Evil Sensei vous attend, bien determiner a vous empecher de passer. Sur votre gauche, se trouve une vitrine, elle peut contenir quelque chose d'interessant.
         <br></p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835196674095579186/Image_EvilSensei.JPG"> <p>
+  hint:
+    actor: |
+      Prononcez les caractere gras a haute voix ...
 parts:
     - vitrine-000
         
@@ -236,7 +250,7 @@ events:
     actor: "Wolfix"
   look:
       actor: |
-         Wolfix vous barre la route.</p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835169350288801802/Image_RobotWolfix.JPG"> <p>
+         Wolfix vous barre la route.</p> <img src="https://cdn.discordapp.com/attachments/498184586736435202/835553165063094302/Image_RobotWolfix.JPG"> <p>
 ---
 id: usine-echelle-2-000
 type: Location
@@ -263,7 +277,7 @@ events:
     actor: "Royaumme"
   look:
     actor: |
-      Vous avez enfin délivre la princesse Kim. </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835246401142128680/Image_Princesse.JPG"> <p><br>Quand soudain...<br><Strong>NEXT</Strong>
+      Vous delivrez enfin la princesse Marion ! </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835246401142128680/Image_Princesse.JPG"> <p><br>Quand soudain...<br><Strong>NEXT</Strong>
 ---
 id: parent-000
 type: Location
@@ -300,7 +314,7 @@ events:
     actor:
       - props: =lampe-000:light-on
         data : "Une lampe frontale allumee"
-      - data : "Un lampe frontale eteinte"
+      - data : "Une lampe frontale eteinte"
   look:
     actor:
       - props: object:light-on
@@ -310,15 +324,15 @@ events:
               </p> <img src=\"https://cdn.discordapp.com/attachments/498184586736435202/834433662766415922/Image_LampeFrontale.JPG\"> <p>"
   light-on:
     - props : object:light-on
-      actor : "La lampe est déjà allumée."
+      actor : "La lampe est deja allumee."
     - actor : "Vous allumez votre lampe frontale."
       effects:
         - type  : ChangePropEffect
           modifs: object:light-on
   light-off:
     - props : -object:light-on
-      actor : "La lampe est déjà éteinte."
-    - actor : "Vous éteignez votre lampe frontale."
+      actor : "La lampe est deja eteinte."
+    - actor : "Vous eteignez votre lampe frontale."
       effects:
         - type  : ChangePropEffect
           modifs: -object:light-on
@@ -348,15 +362,15 @@ events:
               </p> <img src=\"https://cdn.discordapp.com/attachments/498184586736435202/834433662766415922/Image_LampeFrontale.JPG\"> <p>"
   light-on:
     - props : object:light-on
-      actor : "La lampe est déjà allumée."
+      actor : "La lampe est deja allumee."
     - actor : "Vous allumez votre lampe frontale."
       effects:
         - type  : ChangePropEffect
           modifs: object:light-on
   light-off:
     - props : -object:light-on
-      actor : "La lampe est déjà éteinte."
-    - actor : "Vous éteignez votre lampe frontale."
+      actor : "La lampe est deja eteinte."
+    - actor : "Vous eteignez votre lampe frontale."
       effects:
         - type  : ChangePropEffect
           modifs: -object:light-on
@@ -382,18 +396,17 @@ id: myrtille-000
 type: Thing
 props:
   - takable
-name:
+names:
     - jus
     - jus_de_myrtille
     - myrtille
     - jus-de-myrtille
-gender: mas
 events:
   info:
     actor: "Un jus de myrtille"
   look:
     actor: |
-      Un jus de myrtille
+      Ce jus de myrtille ne doit pas etre de la premiere fraicheur.
       </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834809006430224424/Image_JusDeMyrtille.JPG"> <p>
 ---
 id: borne-verrouille-001
@@ -403,7 +416,7 @@ name:
 gender: fem
 events:
   info:
-    actor: "Une borne d'arcade. L'ecran est allumé, il affiche clairement <i>Appuyez sur <strong>PLAY</strong> pour commencer !</i>
+    actor: "Une borne d'arcade. L'ecran est allume, il affiche clairement <i>Appuyez sur <strong>PLAY</strong> pour commencer !</i>
       </p> <img src=\"https://cdn.discordapp.com/attachments/498184586736435202/834762861070516234/Image_BorneArcade.JPG\"> <p>"
   look:
     actor: |
@@ -529,6 +542,22 @@ events:
       Votre vieux casque est devenu un cyber casque ! Sa technologie vous montrera le monde d'une autre maniere ...
       <br> </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835128155224014913/Image_CyberCasque.JPG"> <p>
 ---
+id: cybercasque-002
+type: Thing
+props:
+  - takable
+name:
+    - cybercasque
+    - casque
+gender: mas
+events:
+  info:
+    actor: "Un cybercasque"
+  look:
+    actor: |
+      Votre vieux casque est devenu un cyber casque ! Sa technologie vous montrera le monde d'une autre maniere ...
+      <br> </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835128155224014913/Image_CyberCasque.JPG"> <p>
+---
 id: epee-000
 type: Thing
 props:
@@ -610,11 +639,11 @@ events:
     actor: "Un cheatcode."
   look:
     actor: |
-      <br><Strong>L</Strong>'homme est <Strong>un</Strong> loup pour <Strong>l</Strong>'homme, et ce <Strong>de</Strong>puis le debut. <Strong>Au</Strong> commencement, il etait en <Strong>bas</Strong> de l'echelle. Aujourd'hui, il joue a la pi<Strong>goche</Strong>, sans scurpule. Il s'est mala<Strong>droite</Strong>ment retrouve dans une situation bien moins a son avantage ...
+      <Strong>L</Strong>'homme est <Strong>un</Strong> loup pour <Strong>l</Strong>'homme, et ce <Strong>de</Strong>puis le debut. <Strong>Au</Strong> commencement, il etait en <Strong>bas</Strong> de l'echelle. Aujourd'hui, il joue a la pi<Strong>goche</Strong>, sans scurpule. Il s'est mala<Strong>droite</Strong>ment retrouve dans une situation bien moins a son avantage ...
       <br> <i> - Zola </i>
   hint:
     actor: |
-      Prononcez les a haute voix ...
+      Prononcez les caracteres gras a haute voix ...
 
 # ============= CONTAINER ============
 ---
@@ -731,10 +760,10 @@ exits:
             Rien ne se passe ... La borne d'arcade semble attendre quelque chose.
           observer: &porte002 |
             {{ actor.name }} tente en vain d'ouvrir la porte du
-            département info.
+            departement info.
       leave-portal:
         actor     : "Vous quittez le jeux, la borne ne s'eteint pas pour autant."
-        observer  : "{{ actor.name }} sort du département info."
+        observer  : "{{ actor.name }} sort du departement info."
       open        :
         - props   : portal:closed
           actor   : *porte001
@@ -764,8 +793,8 @@ exits:
           actor   : *porte003
       close       : &porte004
         - props   : portal:closed
-          actor   : "Vous fermez la porte du département."
-          observer: "{{ actor.name }} ferme le porte du département info."
+          actor   : "Vous fermez la porte du departement."
+          observer: "{{ actor.name }} ferme le porte du departement info."
           effects :
             - type  : ChangePropEffect
               modifs: =portal-borne-verrouille-borne-000:closed
@@ -848,7 +877,7 @@ exits:
     events:
       enter-portal:
         actor: |
-          D'etranges lumieres jaillissent de la machine et le temps semble s'arreter autour de vous. Vous vous sentez soudainement happés par l'ecran et atterrissez au milieu d'une jungle luxuriante. <br>
+          D'etranges lumieres jaillissent de la machine et le temps semble s'arreter autour de vous. Vous vous sentez soudainement happes par l'ecran et atterrissez au milieu d'une jungle luxuriante. <br>
   - id: jungle-000-sens_interdit
     location: jungle-000
     direction: sens_interdit
@@ -919,10 +948,10 @@ exits:
             Le rocher vous bloque le passage.
           observer: &porte002 |
             {{ actor.name }} tente en vain d'ouvrir la porte du
-            département info.
+            departement info.
       leave-portal:
         actor     : "Vous revenez a l'entree de la caverne."
-        observer  : "{{ actor.name }} sort du département info."
+        observer  : "{{ actor.name }} sort du departement info."
       open        :
         - props   : portal:closed
           actor   : *porte001
@@ -949,8 +978,8 @@ exits:
           actor   : *porte003
       close       : &porte004
         - props   : portal:closed
-          actor   : "Vous fermez la porte du département."
-          observer: "{{ actor.name }} ferme le porte du département info."
+          actor   : "Vous fermez la porte du departement."
+          observer: "{{ actor.name }} ferme le porte du departement info."
           effects :
             - type  : ChangePropEffect
               modifs: =portal-caverne-bloque-caverne-000:closed
@@ -1194,10 +1223,10 @@ exits:
             Le mur de bloc vous barre le passage. Vous remarquez une fissure dans le mur de blocs.<br></p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835172912528359444/Image_Fissure.JPG"> <p>
           observer: &porte002 |
             {{ actor.name }} tente en vain d'ouvrir la porte du
-            département info.
+            departement info.
       leave-portal:
         actor     : "Vous revenez dans la grotte"
-        observer  : "{{ actor.name }} sort du département info."
+        observer  : "{{ actor.name }} sort du departement info."
       open        :
         - props   : portal:closed
           actor   : *porte001
@@ -1213,7 +1242,7 @@ exits:
               modifs:
                 - -portal:closed
           actor   : |
-            Le mur explose ! La sortie de la grotte est maintenant libere
+            Le mur explose ! La sortie de la grotte est maintenant liberee. Allez au nord, vite, le temps presse !
         - props   :
             - portal:closed
             - -object2:key-for-bloc-fissure-evil-sensei-000
@@ -1224,8 +1253,8 @@ exits:
           actor   : *porte003
       close       : &porte004
         - props   : portal:closed
-          actor   : "Vous fermez la porte du département."
-          observer: "{{ actor.name }} ferme le porte du département info."
+          actor   : "Vous fermez la porte du departement."
+          observer: "{{ actor.name }} ferme le porte du departement info."
           effects :
             - type  : ChangePropEffect
               modifs: =portal-bloc-fissure-evil-sensei-000:closed
@@ -1300,7 +1329,7 @@ exits:
     events:
       enter-portal:
         actor: |
-          Wolfix vous barre la route.
+          Vous avez trouvé la bonne sortie ! Vous vous dirigez maintenant vers le royaume quand Wolfix sort de nul part et vous barre la route.
   - id: wolfix-000-sens_interdit
     location: wolfix-000
     direction: sens_interdit
@@ -1332,10 +1361,10 @@ exits:
             Ca serait trop simple ... Wolfix ne vous laissera pas passer, vous devez le terrasser !
           observer: &porte002 |
             {{ actor.name }} tente en vain d'ouvrir la porte du
-            département info.
+            departement info.
       leave-portal:
         actor     : "Vous revenez a l'entree de l'arene"
-        observer  : "{{ actor.name }} sort du département info."
+        observer  : "{{ actor.name }} sort du departement info."
       open        :
         - props   : portal:closed
           actor   : *porte001
@@ -1362,8 +1391,8 @@ exits:
           actor   : *porte003
       close       : &porte004
         - props   : portal:closed
-          actor   : "Vous fermez la porte du département."
-          observer: "{{ actor.name }} ferme le porte du département info."
+          actor   : "Vous fermez la porte du departement."
+          observer: "{{ actor.name }} ferme le porte du departement info."
           effects :
             - type  : ChangePropEffect
               modifs: =portal-wolfix-princesse-000:closed
@@ -1423,13 +1452,13 @@ exits:
     events:
       enter-portal:
         actor: |
-          Votre pioche s'est cassé. Visiblement, le bloc n'est pas si fragile que ca ...
+          Votre pioche s'est cassee. Visiblement, le bloc n'est pas si fragile que ca ...
         effects:
           - type: ClearEffect
           - type: TakeEffect2
             object: tnt-001
           - type: TakeEffect2
-            object: cybercasque-000
+            object: cybercasque-002
           - type: TakeEffect2
             object: epee-001
           - type: TakeEffect2
