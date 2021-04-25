@@ -9,7 +9,7 @@ events:
       <br>Voici quelques explications sur le fonctionnement du jeu :
       <br>Insert Coin fonctionne avec des commandes, a ecrire dans la barre de commande situee en bas de cette page. A vous de les trouver ! Voici quelques exemples d'actions que vous pouvez faire avec ces commandes: regarder, regarder un objet, aller dans une direction, prendre un objet, mettre X dans X, ouvrir X avec X ... 
       <br>Vous avez un inventaire accessible avec la commande \"inventaire\" ou \"i\".
-      <br>Le jeux comporte des enigmes, dont les solutions se materialisent par des codes/phrases cachees a taper dans la barre de commande.
+      <br>Le jeu comporte des enigmes, dont les solutions se materialisent par des codes/phrases cachees a taper dans la barre de commande.
       <br>Pour la plupart des enigmes, une commande \"indice\" est disponible, pour vous aider a avancer. Bien evidemment, cette commande est a utiliser uniquement si vous bloquez.
       <br>Certains mots/elements sont en gras, ils vous aident a trouver la commande a taper.
       <br>Fiez-vous a votre intuition et faites preuve d'observation ... Bonne chance !
@@ -77,7 +77,7 @@ events:
       Affiche sur l'ecran, vous constatez les performances impressionnantes des precedents joueurs.<br> </p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/834782988948340766/Image_EnigmeHighScores.JPG"> <p>
   hint:
     actor: |
-      Cherchez un <Strong>CODE</Strong> ...
+      Cherchez un <Strong>CODE</Strong> ! Regardez dans tous les sens ...
 ---
 id: jungle-000
 type: Location
@@ -185,6 +185,9 @@ events:
   look:
     actor: |
       Vous vous trouvez au sommet du rocher.<br> Malgre vos demandes polies, Kong le gorille sauvage ne bougera pas.</p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835150231569039401/Image_Kong3Vies.JPG"> <p>
+  hint:
+    actor: |
+      Vous n'avez pas le temps de taper une nouvelle commande que Kong a deja regenere sa sante. Il a 3 vies, et un coup d'epee lui en enleve 1. Triplez votre attaque !
 ---
 id: sommet-1vies-000
 type: Location
@@ -194,6 +197,9 @@ events:
   look:
     actor: |
       Vous vous trouvez au sommet du rocher.<br> Malgre vos demandes polies, Kong le gorille sauvage ne bougera pas.</p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835150231569039401/Image_Kong3Vies.JPG"> <p>
+  hint:
+    actor: |
+      Vous n'avez pas le temps de taper une nouvelle commande que Kong a deja regenere sa sante. Il a 3 vies, et un coup d'epee lui en enleve 1. Triplez votre attaque !
 ---
 id: sommet-0vies-000
 type: Location
@@ -213,7 +219,7 @@ events:
     actor: Grotte
   look:
       actor: |
-       Vous etes coince!! trouvez un moyen de passer.<br></p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835148181833908275/Image_TunnelBlocs.JPG"> <p>
+       Vous etes coince ! Des blocs tombent de nul part devant vous.<br></p> <img src="https://cdn.discordapp.com/attachments/803280892691873893/835148181833908275/Image_TunnelBlocs.JPG"> <p>
   hint:
     actor: |
       Projettez vous dans le temps.
@@ -639,7 +645,7 @@ events:
     actor: "Un cheatcode."
   look:
     actor: |
-      <Strong>L</Strong>'homme est <Strong>un</Strong> loup pour <Strong>l</Strong>'homme, et ce <Strong>de</Strong>puis le debut. <Strong>Au</Strong> commencement, il etait en <Strong>bas</Strong> de l'echelle. Aujourd'hui, il joue a la pi<Strong>goche</Strong>, sans scurpule. Il s'est mala<Strong>droite</Strong>ment retrouve dans une situation bien moins a son avantage ...
+      <Strong>L</Strong>'homme est <Strong>un</Strong> loup pour <Strong>L</Strong>'homme, et ce <Strong>de</Strong>puis le debut. <Strong>Au</Strong> commencement, il etait en <Strong>bas</Strong> de l'echelle. Aujourd'hui, il joue a la pi<Strong>goche</Strong>, sans scurpule. Il s'est mala<Strong>droite</Strong>ment retrouve dans une situation bien moins a son avantage ...
       <br> <i> - Zola </i>
   hint:
     actor: |
@@ -762,7 +768,7 @@ exits:
             {{ actor.name }} tente en vain d'ouvrir la porte du
             departement info.
       leave-portal:
-        actor     : "Vous quittez le jeux, la borne ne s'eteint pas pour autant."
+        actor     : "Vous quittez le jeu, la borne ne s'eteint pas pour autant."
         observer  : "{{ actor.name }} sort du departement info."
       open        :
         - props   : portal:closed
@@ -918,7 +924,7 @@ exits:
             object: cybercasque-001
       hint:
         actor: |
-          Heuresement vous etes dans un jeux video, il faut maintenant trouvez un moyen de recuperer une vie.
+          Heuresement vous etes dans un jeu video, il faut maintenant trouvez un moyen de recuperer une vie.
   - id: caverne-bloque-sens_interdit
     location: caverne-bloque-000
     direction: sens_interdit
@@ -1416,7 +1422,7 @@ exits:
     events:
       enter-portal:
         actor: |
-          "... des cris lointains interrompent la scene. VITE ! ARRETEZ TOUT !<br><Strong><i>A TABLE!<br>           ETEINS ET VIENS MANGER!!!<br>   ARRETES TON JEUX DEBILE"
+          "... des cris lointains interrompent la scene. VITE ! ARRETEZ TOUT !<br><Strong><i>A TABLE!<br>           ETEINS ET VIENS MANGER!!!<br>   ARRETES TON JEU DEBILE"
 
   - id: parent-000-sens_interdit
     location: parent-000

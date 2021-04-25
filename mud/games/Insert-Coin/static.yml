@@ -46,6 +46,8 @@ directions:
     "52"      : "52"
     exit      : exit
     quitter   : exit
+    eteindre  : exit
+    eteindre le jeu : exit
     arreter   : exit
     arreter de jouer : exit
     quitter le jeu  : exit
