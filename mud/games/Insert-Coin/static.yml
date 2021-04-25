@@ -127,7 +127,7 @@ events:
     - props   : action:cannot-see
       actor   : "Dans cette obscurite, vous n'y voyez rien."
     - props   : action:go
-      actor   : "Il n'y a pas d'issue dans cette direction."
+      actor   : "Commande indisponible/impossible ici"
     - props   : action:cannot-find-object
       actor   : "{{ action.object }}: introuvable!"
     - props   : action:cannot-find-object2
