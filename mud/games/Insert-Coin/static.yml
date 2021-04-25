@@ -117,7 +117,7 @@ events:
     observer  : "{{ actor.name }} prend {{ object.noun_the() }}."
     failed:
       - props : event:object-already-in-inventory
-        actor : "{{ object.noun_the() }} est déjà dans votre inventaire."
+        actor : "{{ object.noun_the() }} est deja dans votre inventaire."
       - actor   : "Vous tentez en vain de prendre {{ object.noun_the() }}."
         observer: "{{ actor.name }} tente en vain de prendre {{ object.noun_the() }}."
 
@@ -135,7 +135,7 @@ events:
     - props   : -object:lightable
       actor   : "{{ object.noun_the() }} n'est pas allumable."
     - props   : object:light-on
-      actor   : "{{ object.noun_the() }} est déjà allumé{{ object.noun_e() }}"
+      actor   : "{{ object.noun_the() }} est deja allume{{ object.noun_e() }}"
     - actor   : "Vous allumez {{ object.noun_the() }}."
       observer: "{{ actor.name }} allume {{ object.noun_his() }}."
       effects :
@@ -146,7 +146,7 @@ events:
     - props   : -object:lightable
       actor   : "{{ object.noun_the() }} n'est pas allumable, donc pas éteignable."
     - props   : -object:light-on
-      actor   : "{{ object.noun_the() }} est déjà éteint{{ object.noun_e() }}"
+      actor   : "{{ object.noun_the() }} est deja eteint{{ object.noun_e() }}"
     - actor   : "Vous éteignez {{ object.noun_the() }}."
       observer: "{{ actor.name }} éteind {{ object.noun_his() }}."
       effects :
@@ -251,10 +251,10 @@ events:
     - props: object:closed
       actor: |
         Vous tentez futilement de fermer {{ object.noun_the() }} qui
-        est déjà fermé{{ object.noun_e() }}.
+        est deja ferme{{ object.noun_e() }}.
       observer: |
         {{ actor.name }} tente futilement de fermer {{ object.noun_the() }}
-        qui est déjà fermé{{ object.noun_e() }}.
+        qui est deja ferme{{ object.noun_e() }}.
     - actor: |
         Vous fermez {{ object.noun_the() }}.
       observer: |
@@ -265,7 +265,7 @@ events:
 
   reset:
     actor: |
-      Le jeu a été reset.  Vous êtes donc mort!
+      Le jeu a ete reset.  Vous etes donc mort!
 
   teleport:
     not-found:
