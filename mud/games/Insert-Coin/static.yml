@@ -123,7 +123,7 @@ events:
 
   failed-action:
     - props   : action:cannot-see
-      actor   : "Dans cette obscurité, vous n'y voyez rien."
+      actor   : "Dans cette obscurite, vous n'y voyez rien."
     - props   : action:go
       actor   : "Il n'y a pas d'issue dans cette direction."
     - props   : action:cannot-find-object
@@ -178,7 +178,7 @@ events:
     failed:
       actor   :
         - props: event:cannot-see
-          data : "Dans cette obscurité, vous n'y voyez rien."
+          data : "Dans cette obscurite, vous n'y voyez rien."
         - data : "Pour une raison inconnue, vous ne voyez rien."
     actor:
       - props: object:is_player
