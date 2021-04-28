@@ -31,13 +31,12 @@ id: grenier-000
 type: Location
 contains:
   - lampe-000
-  - myrtille-000
 events:
   info:
     actor: "Grenier"
   look:
     actor: |
-      Vous etes dans le grenier de la maison. A l'est, vous apercevez la borne d'arcade. Au fond a l'ouest, il fais trop sombre et vous n'y voyez rien. Devant vous sur une boite en carton, vous trouvez un reste de jus de myrtille, qui doit etre la depuis un moment. A votre gauche, accroche sur le mur, vous remarquez le vieux casque a lampe frontale de votre tonton Stephane.
+      Vous etes dans le grenier de la maison. A l'est, vous apercevez la borne d'arcade. Au fond a l'ouest, il fais trop sombre et vous n'y voyez rien. A votre gauche, accroche sur le mur, vous remarquez le vieux casque a lampe frontale de votre tonton Stephane.
 ---
 id: coin-000
 type: Location
